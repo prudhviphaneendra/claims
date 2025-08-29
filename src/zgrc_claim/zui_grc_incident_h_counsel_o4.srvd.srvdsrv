@@ -1,0 +1,15 @@
+@EndUserText: {
+label: 'ZC_GRC_INCIDENT_H_COUNSEL'
+}
+@ObjectModel: {
+leadingEntity: {
+name: 'ZC_GRC_INCIDENT_H_COUNSEL'
+}
+}
+define service ZUI_GRC_INCIDENT_H_COUNSEL_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_INCIDENT_H_COUNSEL    as CLAIM;
+  expose ZC_GRC_INCIDENTTXN_H_COUNSEL as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

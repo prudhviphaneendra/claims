@@ -1,0 +1,15 @@
+@EndUserText: {
+label: 'ZC_GRC_GRM_CARGO_INSURANCE'
+}
+@ObjectModel: {
+leadingEntity: {
+name: 'ZC_GRC_GRM_CARGO_INSURANCE'
+}
+}
+define service ZUI_GRC_GRM_CARGO_INSURANCE_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_GRM_CARGO_INSURANCE    as CLAIM;
+  expose ZC_GRC_GRMTXN_CARGO_INSURANCE as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

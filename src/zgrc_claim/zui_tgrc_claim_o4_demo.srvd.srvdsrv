@@ -1,0 +1,13 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TGRC_CLAIM'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TGRC_CLAIM'
+  }
+}
+define service ZUI_TGRC_CLAIM_O4_DEMO
+  provider contracts odata_v4_ui {
+  expose ZC_TGRC_CLAIM_DEMO     as CLAIM;
+  expose ZC_TGRC_CLAIM_TRN_DEMO as CLAIM_TRN;
+}

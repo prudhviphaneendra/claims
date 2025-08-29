@@ -1,0 +1,1331 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ClaimExternalId'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ClaimExternalId'
+annotate entity ZC_TGRC_CLAIM_AL
+    with 
+{
+  @EndUserText.label: 'ClaimUuid'
+  @UI.facet: [ {
+    purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 10,
+       id: 'super1',
+       label: 'Information 1' },
+       { purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 20,
+       id: 'super2',
+       label: 'Information 2' },
+       { 
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Values1',
+      position: 10,
+      parentId: 'super1',
+      targetQualifier: 'values1' },
+      { 
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Values2',
+      position: 20,
+      parentId: 'super2',
+      targetQualifier: 'values2' },
+//   {  label: 'Claim : Details', 
+//    id: 'GeneralInfo', 
+//    purpose: #STANDARD, 
+//    position: 30 , 
+//    type: #IDENTIFICATION_REFERENCE
+//  },
+  {
+    label: 'Claim Transaction', 
+    id: 'Item1', 
+    purpose: #STANDARD, 
+    position: 40 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_claim_trn'
+  },
+  {
+    label: 'Financial Matrix', 
+    id: 'Item2', 
+    purpose: #STANDARD, 
+    position: 50 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Matrix'
+  }  ]
+  
+  
+ @UI.fieldGroup: [{ qualifier: 'values1', label: 'ClaimUuid', position:10 },
+
+ // { type: #FOR_ACTION, dataAction: 'copyAsset', label: 'Copy Claim' }
+   
+   { type: #FOR_ACTION, dataAction: 'closeClaim', label: 'Close' },
+                            { type: #FOR_ACTION, dataAction: 'copyClaim', label: 'Clone' } 
+   
+   ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'ClaimUuid'
+    
+  }
+  
+ ]
+//   ,
+//  { position: 11, type: #FOR_ACTION, label: 'Payment', dataAction: 'Payment' }
+//  { type: #FOR_ACTION, dataAction: 'closeClaim', label: 'Close' } 
+  @UI.selectionField: [ {
+    position: 10 
+        
+  } ]
+   
+     
+          
+//   @UI: { hidden: true }
+  ClaimUuid;
+  
+//   @UI.lineItem: [{ position: 11 },
+//                 { type: #FOR_ACTION,
+//                   dataAction: 'payment' ,
+//                   label: 'Payment'}]
+//  @UI.selectionField: [{ position: 11 }]
+//  @UI.textArrangement: #TEXT_ONLY
+//  @UI.dataPoint: { qualifier: 'payment', title: 'Payment' }
+//  flag ;
+  
+    
+   
+  @EndUserText.label: 'Claim External Id'
+   @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 20 , 
+    label:  'Claim External Id'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label:  'Claim External Id'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  ClaimExternalId;
+  
+  @EndUserText.label: 'Record type'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 30 ,
+    label: 'Record type'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 ,
+    label: 'Record type'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  ClaimRecType;
+  
+   
+  @EndUserText.label: '3rd Party Liability'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+ 
+  X3rdPartyLiability;
+
+@EndUserText.label: 'Above Deductible Claim'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 170 ,
+    label:  'Above Deductible Claim'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 ,
+    label:  'Above Deductible Claim'
+  } ]
+ 
+  AboveDeductibleClaim;
+  
+  @EndUserText.label: 'Accident type'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 180 ,
+    label: 'Accident type'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 ,
+    label: 'Accident type'
+  } ]
+  
+  AccidentType;
+ 
+ @EndUserText.label: 'Adjuster Email'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 220 , 
+    label: 'Adjuster Email'
+  } ]
+  @UI.lineItem: [ {
+    position: 220 , 
+    label: 'Adjuster Email'
+  } ]
+
+  AdjusterEmail;
+ @EndUserText.label: 'Adjuster Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 230 , 
+    label: 'Adjuster Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 230 , 
+    label: 'Adjuster Name'
+  } ]
+  
+  AdjusterName;
+  
+  @EndUserText.label: 'Adjuster Phone'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 240 , 
+    label: 'Adjuster Phone'
+  } ]
+  @UI.lineItem: [ { 
+    position: 240 , 
+    label: 'Adjuster Phone'
+  } ]
+
+  AdjusterPhone;
+ @EndUserText.label: 'Alleged Injury/Damage'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 280 , 
+   label: 'Alleged Injury/Damage'
+  } ]
+  @UI.lineItem: [ {
+    position: 280 , 
+   label: 'Alleged Injury/Damage'
+  } ]
+ 
+  InjuryDescription;
+ 
+ @EndUserText.label:'Below Deductible Claim'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 420 ,
+    label:'Below Deductible Claim'  
+  } ]
+  @UI.lineItem: [ {
+    position: 420 ,
+    label:'Below Deductible Claim'  
+  } ]
+ 
+  BelowDeductibleClaim;
+   @EndUserText.label: 'Birth Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 440 , 
+    label: 'Birth Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 440 , 
+    label: 'Birth Date'
+  } ]
+ 
+  DateClaimantBorn;
+  
+   @EndUserText.label: 'Cause'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 580 ,
+    label: 'Cause'
+  } ]
+  @UI.lineItem: [ {
+    position: 580 ,
+    label: 'Cause'
+  } ]
+
+  Cause;
+
+  @EndUserText.label: 'Citation type'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 650 ,
+    label: 'Citation type'
+  } ]
+  @UI.lineItem: [ {
+    position: 650 ,
+    label: 'Citation type'
+  } ]
+
+  CitationType;
+  
+  @EndUserText.label: 'ClaimAge'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 660 ,
+    label: 'ClaimAge'
+  } ]
+  @UI.lineItem: [ {
+    position: 660 ,
+    label: 'ClaimAge'
+  } ]
+
+  ClaimAge;
+  
+@EndUserText.label: 'Claim Name'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 750 , 
+    label: 'ClaimName'
+  } ]
+  @UI.lineItem: [ {
+    position: 750 , 
+    label: 'ClaimName'
+  } ]
+  
+  ClaimName;
+
+  @EndUserText.label: 'Claimant Address Line 1'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 790 , 
+    label: 'ClaimantAddressLine1'
+  } ]
+  @UI.lineItem: [ {
+    position: 790 , 
+    label: 'ClaimantAddressLine1'
+  } ]
+
+  ClaimantAddressLine1;
+  
+  @EndUserText.label: 'Claimant Address Line 2'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 800 , 
+    label: 'ClaimantAddressLine2'
+  } ]
+  @UI.lineItem: [ {
+    position: 800 , 
+    label: 'ClaimantAddressLine2'
+  } ]
+  
+  ClaimantAddressLine2;
+
+  @EndUserText.label: 'ClaimantPhone'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 940 , 
+    label: 'ClaimantPhone'
+  } ]
+  @UI.lineItem: [ {
+    position: 940 , 
+    label: 'ClaimantPhone'
+  } ]
+
+  ClaimantPhone;    
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 810 
+  } ]
+  @UI.lineItem: [ {
+    position: 810 
+  } ]
+ 
+  ClaimantAge;
+  
+  @EndUserText.label: 'Claimant City'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 820 , 
+    label: 'ClaimantCity'
+  } ]
+  @UI.lineItem: [ {
+    position: 820 , 
+    label: 'ClaimantCity'
+  } ]
+ 
+  ClaimantCity;
+  
+  @EndUserText.label: 'Claimant Country'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 830 
+  } ]
+  @UI.lineItem: [ {
+    position: 830 
+  } ]
+ 
+  ClaimantCountry;
+  
+@EndUserText.label: 'Claimant Gender'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 850 
+  } ]
+  @UI.lineItem: [ {
+    position: 850 
+  } ]
+ 
+  ClaimantGender;
+  @EndUserText.label: 'Claimant Name'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 920 , 
+    label: 'Claimant Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 920 , 
+    label: 'Claimant Name'
+  } ]
+ 
+  ClaimantName;
+  
+
+
+ @EndUserText.label: 'ClaimantPostalCode'
+ @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 950 , 
+    label: 'ClaimantPostalCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 950 , 
+    label: 'ClaimantPostalCode'
+  } ]
+ 
+  ClaimantPostalCode;
+ 
+  @UI.fieldGroup: [{ qualifier: 'values2', 
+    position: 980 
+  } ]
+  @UI.lineItem: [ {
+    position: 980 
+  } ]
+ 
+  ClaimantState;
+  
+   @EndUserText.label:  'Coverage Minor'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1280 ,
+    label:  'Coverage Minor'
+  } ]
+  @UI.lineItem: [ {
+    position: 1280 ,
+    label:  'Coverage Minor'
+  } ]
+
+  CoverageMinor;
+  
+    @EndUserText.label: 'Cross Reference'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1340 , 
+    label: 'Cross Reference'
+  } ]
+  @UI.lineItem: [ {
+    position: 1340 , 
+    label: 'Cross Reference'
+  } ]
+ 
+  CrossReference;
+  
+   @EndUserText.label: 'Currency Grm Usd'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1350 
+  } ]
+  @UI.lineItem: [ {
+    position: 1350 
+  } ]
+ 
+  CurrencyGrmUsd;
+ 
+   @EndUserText.label: 'DA Appointed'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1380 ,
+    label: 'DA Appointed'
+  } ]
+  @UI.lineItem: [ {
+    position: 1380 ,
+    label: 'DA Appointed'
+  } ]
+ 
+  DaAppointed;
+  
+  @EndUserText.label: 'DA Appointed Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1390 , 
+   label: 'DA Appointed Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 1390 , 
+    label: 'DA Appointed Date'
+  } ]
+  
+  DaAppointedDate;
+  
+  @EndUserText.label: 'DA Email'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1400 , 
+   label: 'DA Email'
+  } ]
+  @UI.lineItem: [ {
+    position: 1400 , 
+    label: 'DA Email'
+  } ]
+
+  DaEmail;
+  
+  @EndUserText.label: 'DA Firm Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1410 ,
+    label: 'DA Firm Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 1410 ,
+    label: 'DA Firm Name'
+  } ]
+
+  DaFirmName;
+  
+  @EndUserText.label: 'DA Hourly Rate'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1420 , 
+    label: 'DA Hourly Rate'
+  } ]
+  @UI.lineItem: [ {
+    position: 1420 , 
+   label: 'DA Hourly Rate'
+  } ]
+
+  DaHourlyRate;
+  
+  @EndUserText.label: 'DA Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1430 , 
+    label: 'DA Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 1430 , 
+    label: 'DA Name'
+  } ]
+ 
+  DaName;
+  
+  @EndUserText.label: 'DA Phone #'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1440 , 
+    label: 'DA Phone #'
+  } ]
+  @UI.lineItem: [ {
+    position: 1440 , 
+    label: 'DA Phone #'
+  } ]
+ 
+  DaPhone;
+@EndUserText.label: 'Date Opened'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1620 , 
+    label: 'Date Opened'
+  } ]
+  @UI.lineItem: [ {
+    position: 1620 , 
+    label: 'Date Opened'
+  } ]
+
+  DateOpened;
+  
+ @EndUserText.label: 'Reported To Insurer'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1650 , 
+    label: 'Reported To Insurer'
+  } ]
+  @UI.lineItem: [ {
+    position: 1650 , 
+    label: 'Reported To Insurer'
+  } ]
+ 
+  ReportedToInsurer;
+  
+  @EndUserText.label: 'Day Of Week'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1740 , 
+    label: 'Day Of Week'
+  } ]
+  @UI.lineItem: [ {
+    position: 1740 , 
+    label: 'Day Of Week'
+  } ]
+
+  DayOfWeek;
+ 
+   @EndUserText.label: 'Days to Conversion'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1770 ,
+    label: 'Days to Conversion'
+  } ]
+  @UI.lineItem: [ {
+    position: 1770 ,
+    label: 'Days to Conversion'
+  } ]
+
+  DaysToConversion;
+
+  @EndUserText.label: 'Deductible from Policy'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1830 ,
+    label: 'Deductible from Policy'
+  } ]
+  @UI.lineItem: [ {
+    position: 1830 ,
+    label: 'Deductible from Policy'
+  } ]
+
+  DeductibleFromPolicy;
+
+ @EndUserText.label: 'Driver Address'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1950 , 
+    label: 'Driver Address'
+  } ]
+  @UI.lineItem: [ {
+    position: 1950 , 
+    label: 'Driver Address'
+  } ]
+
+  DriverAddress;
+  
+
+   @EndUserText.label: 'Driver Birth Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1960 , 
+    label:  'Driver Birth Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 1960 , 
+    label:  'Driver Birth Date'
+  } ]
+
+  DriverBirthDate;
+
+  
+  @EndUserText.label: 'Driver City'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1970 , 
+    label: 'Driver City'
+  } ]
+  @UI.lineItem: [ {
+    position: 1970 , 
+    label: 'Driver City'
+  } ]
+
+  DriverCity;
+  
+  @EndUserText.label: 'Driver Name (Last, First)'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1980 , 
+    label: 'Driver Name (Last, First)'
+  } ]
+  @UI.lineItem: [ {
+    position: 1980 , 
+    label: 'Driver Name (Last, First)'
+  } ]
+
+  DriverName;
+
+  @EndUserText.label: 'Driver Phone'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 1990 , 
+    label: 'Driver Phone'
+  } ]
+  @UI.lineItem: [ {
+    position: 1990 , 
+    label: 'Driver Phone'
+  } ]
+ 
+  DriverPhone;
+  
+  @EndUserText.label: 'Driver Postal Code'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2000 , 
+    label: 'Driver Postal Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 2000 , 
+    label: 'Driver Postal Code'
+  } ]
+ 
+  DriverPostalCode;
+  @EndUserText.label: 'Driver State/Province'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2020 ,
+    label: 'Driver State/Province'
+  } ]
+  @UI.lineItem: [ {
+    position: 2020 ,
+    label: 'Driver State/Province'
+  } ]
+ 
+  DriverState;
+ 
+  @EndUserText.label: 'Drivers Age'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2030 ,
+    label: 'Drivers Age'
+  } ]
+  @UI.lineItem: [ {
+    position: 2030 ,
+    label: 'Drivers Age'
+  } ]
+  
+  DriversAge;
+  
+ 
+ @EndUserText.label: 'Exact Location'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2150 , 
+    label: 'Exact Location'
+  } ]
+  @UI.lineItem: [ {
+    position: 2150 , 
+    label: 'Exact Location'
+  } ]
+
+  ExactLocation;
+  
+
+  @EndUserText.label: 'Fatality'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2270 ,
+    label: 'Fatality'
+  } ]
+  @UI.lineItem: [ {
+    position: 2270 ,
+    label: 'Fatality'
+  } ]
+  
+  Fatality;
+  
+ @EndUserText.label: 'Handler'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2510 ,
+    label: 'Handler'
+  } ]
+  @UI.lineItem: [ {
+    position: 2510 ,
+    label: 'Handler'
+  } ]
+ 
+  HandlerBu;
+ 
+ @EndUserText.label: 'Highway #/Direction'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2630 , 
+    label: 'Highway #/Direction'
+  } ]
+  @UI.lineItem: [ {
+    position: 2630 , 
+    label: 'Highway #/Direction'
+  } ]
+ 
+  HighwayDirection;
+ 
+ @EndUserText.label: 'HSSE Learning Pack'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2660 ,
+    label: 'HSSE Learning Pack'
+  } ]
+  @UI.lineItem: [ {
+    position: 2660 ,
+    label: 'HSSE Learning Pack'
+  } ]
+
+  HsseLearningPacks;
+
+  @EndUserText.label: 'Incident Report #'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2710 , 
+    label: 'Incident Report #'
+  } ]
+  @UI.lineItem: [ {
+    position: 2710 , 
+    label: 'Incident Report #'
+  } ]
+
+  BuClaim;
+
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2820 
+  } ]
+  @UI.lineItem: [ {
+    position: 2820 
+  } ]
+ 
+  Injured;
+
+  @EndUserText.label: 'Insurance Carrier'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2850 ,
+    label: 'Insurance Carrier'
+  } ]
+  @UI.lineItem: [ {
+    position: 2850 ,
+    label: 'Insurance Carrier'
+  } ]
+
+  TpaCarrier;
+
+  @EndUserText.label: 'Insured Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2880 ,
+    label: 'Insured Name',
+    type: #WITH_INTENT_BASED_NAVIGATION,
+      semanticObject: 'zgrc_locations',
+      semanticObjectAction: 'get'
+  } ]
+  @UI.lineItem: [ {
+    position: 2880 ,
+    label: 'Insured Name'
+  } ]
+  
+  InsuredName;
+  
+ @EndUserText.label: 'Insurer Claim'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 2900 , 
+    label: 'Insurer Claim'
+  } ]
+  @UI.lineItem: [ {
+    position: 2900 , 
+    label: 'Insurer Claim'
+  } ]
+
+  InsurerClaim;
+
+ @EndUserText.label: 'Light Conditions'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3010 ,
+    label: 'Light Conditions'
+  } ]
+  @UI.lineItem: [ {
+    position: 3010 ,
+    label: 'Light Conditions'
+  } ]
+  LightConditions;
+ 
+@EndUserText.label: 'Litigation Status'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3050 ,
+    label: 'Litigation Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 3050 ,
+    label: 'Litigation Status'
+  } ]
+ 
+  LitigationStatusGrm;
+ 
+  @EndUserText.label: 'Loss City'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3180 , 
+    label:  'Loss City'
+  } ]
+  @UI.lineItem: [ {
+    position: 3180 , 
+    label:  'Loss City'
+  } ]
+
+  AccidentCity;
+  
+  @EndUserText.label: 'Loss Country'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3190,
+    label: 'Loss Country' 
+  } ]
+  @UI.lineItem: [ {
+    position: 3190 ,
+    label: 'Loss Country'
+  } ]
+
+  LossCountry;
+  
+  @EndUserText.label: 'Loss Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3210 , 
+    label: 'Loss Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 3210 , 
+    label: 'Loss Date'
+  } ]
+ 
+  DateOfLoss;
+  
+ @EndUserText.label: 'Loss Description'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3220 ,
+    label: 'Loss Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 3220 ,
+    label: 'Loss Description'
+} ]
+  AccidentDescription;
+ 
+   
+  @EndUserText.label: 'Accident Postal Code'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3240 , 
+    label: 'Accident Postal Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 3240 , 
+    label: 'Accident Postal Code'
+  } ]
+ 
+  AccidentPostalCode;
+  
+  @EndUserText.label: 'Loss State/Province'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3250 ,
+    label: 'Loss State/Province'
+  } ]
+  @UI.lineItem: [ {
+    position: 3250 ,
+    label: 'Loss State/Province'
+  } ]
+ 
+  AccidentState;
+
+ @EndUserText.label: 'Manual Deductible'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3370 , 
+    label: 'Manual Deductible'
+  } ]
+  @UI.lineItem: [ {
+    position: 3370 , 
+    label: 'Manual Deductible'
+  } ]
+ 
+  StarsDeductible;
+  
+  @EndUserText.label: 'Mediation Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3380 , 
+    label: 'Mediation Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 3380 , 
+    label: 'Mediation Date'
+  } ]
+ 
+  MediationDate;
+
+  @EndUserText.label: 'Nearest Landmark'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3580 , 
+    label: 'Nearest Landmark'
+  } ]
+  @UI.lineItem: [ {
+    position: 3580 , 
+    label: 'Nearest Landmark'
+  } ]
+ 
+  NearestLandmark;
+ @EndUserText.label: 'Occurrence'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3120 , 
+    label: 'Occurrence'
+  } ]
+  @UI.lineItem: [ {
+    position: 3120 , 
+    label: 'Occurrence'
+  } ]
+ 
+  Occurrence;
+  
+  @EndUserText.label: 'Occurrence Number'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3720 , 
+    label: 'Occurrence Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 3720 , 
+    label: 'Occurrence Number'
+  } ]
+ 
+  OccurrenceNumber;
+
+  @EndUserText.label: 'Other Vehicles'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3820 ,
+    label: 'Other Vehicles'
+  } ]
+  @UI.lineItem: [ {
+    position: 3820 ,
+    label: 'Other Vehicles'
+  } ]
+  
+  OtherVehicles;
+
+@EndUserText.label: 'PA Appointed'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3870 ,
+    label: 'PA Appointed'
+  } ]
+  @UI.lineItem: [ {
+    position: 3870 ,
+    label: 'PA Appointed'
+  } ]
+  
+  PaAppointed;
+  
+  @EndUserText.label: 'PA Appointed Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3880 , 
+    label: 'PA Appointed Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 3880 , 
+    label: 'PA Appointed Date'
+  } ]
+
+  PaAppointedDate;
+  
+ @EndUserText.label: 'PA Firm Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3900 , 
+    label: 'PA Firm Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 3900 , 
+    label: 'PA Firm Name'
+  } ]
+ 
+  PaFirmName;
+  
+  @EndUserText.label: 'PA Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 3910 , 
+    label:  'PA Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 3910 , 
+    label:  'PA Name'
+  } ]
+ 
+  PaName;
+ 
+ @EndUserText.label: 'Police Dept Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4020 , 
+    label: 'Police Dept Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 4020 , 
+    label: 'Police Dept Name'
+  } ]
+ 
+  PoliceDeptName;
+  
+@EndUserText.label: 'Police Report'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4030 , 
+    label: 'Police Report'
+  } ]  
+  @UI.lineItem: [ {
+    position: 4030 , 
+    label: 'Police Report'
+  } ]
+ 
+  PoliceReport;
+ 
+ @EndUserText.label: 'Policy Name'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4060 ,
+    label: 'Policy Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 4060 ,
+    label: 'Policy Name'
+  } ]
+
+  PolicyName;
+
+ @EndUserText.label: 'Policy Number( Formula )'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4080 , 
+    label: 'Policy Number( Formula )'
+  } ]
+  @UI.lineItem: [ {
+    position: 4080 , 
+    label: 'Policy Number( Formula )'
+  } ]
+ 
+  PolicyNumberNew;
+  
+   @EndUserText.label: 'Policy Section'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4100 ,
+    label: 'Policy Section'
+  } ]
+  @UI.lineItem: [ {
+    position: 4100 ,
+    label: 'Policy Section'
+  } ]
+  
+  PolicySectionLookup;
+
+
+ @EndUserText.label: 'Port(s) involved'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4200 , 
+    label: 'Port(s) involved'
+  } ]
+  @UI.lineItem: [ {
+    position: 4200 , 
+    label: 'Port(s) involved'
+  } ]
+ 
+  PortSInvolved;
+ 
+ @EndUserText.label: 'Property'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4220 ,
+    label: 'Property'
+  } ]
+  @UI.lineItem: [ {
+    position: 4220 ,
+    label: 'Property'
+  } ]
+ 
+  PropertyLookup;
+ 
+  @EndUserText.label: 'Reported Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4450 , 
+    label: 'Reported Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 4450 , 
+    label: 'Reported Date'
+  } ]
+ 
+  DateReportedToClient;
+  
+ @EndUserText.label: 'Response Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4480 , 
+    label: 'Response Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 4480 , 
+    label: 'Response Date'
+  } ]
+
+  ResponseDate;
+
+ @EndUserText.label: 'Served Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4590 , 
+    label: 'Served Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 4590 , 
+    label: 'Served Date'
+  } ]
+ 
+  ServedDate;
+ 
+@EndUserText.label: 'Status'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4740 ,
+    label: 'Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 4740 ,
+    label: 'Status'
+  } ]  @UI.selectionField: [ {
+    position: 4740 
+  } ]
+  Status;
+   @EndUserText.label: 'Sub Type'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4780 ,
+    label: 'Sub Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 4780 ,
+    label: 'Sub Type'
+  } ]
+
+  SubType;
+
+
+ @EndUserText.label: 'Suit Filed Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 4880 , 
+    label: 'Suit Filed Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 4880 , 
+    label: 'Suit Filed Date'
+  } ]
+
+  SuitFiledDate;
+
+@EndUserText.label: 'Time Bar'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5010 , 
+    label: 'Time Bar'
+  } ]
+  @UI.lineItem: [ {
+    position: 5010 , 
+    label: 'Time Bar'
+  } ]
+
+  TimeBar;
+
+@EndUserText.label: 'Accident Time'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5020 , 
+    label: 'Accident Time'
+  } ]
+  @UI.lineItem: [ {
+    position: 5020 , 
+    label: 'Accident Time'
+  } ]
+
+  AccidentTime;
+
+  @EndUserText.label: 'Total Deductible'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5070 ,
+    label: 'Total Deductible'
+  } ]
+  @UI.lineItem: [ {
+    position: 5070 ,
+    label: 'Total Deductible'
+  } ]
+
+  TotalDeductible;
+
+  @EndUserText.label: 'Trial Date'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5230 , 
+    label: 'Trial Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 5230 , 
+    label: 'Trial Date'
+  } ]
+
+  TrialDate;
+    
+ @EndUserText.label: 'Uninsured / Underinsured'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5340 ,
+    label: 'Uninsured / Underinsured'
+  } ]
+  @UI.lineItem: [ {
+    position: 5340 ,
+    label: 'Uninsured / Underinsured'
+  } ]
+
+  UninsuredUnderinsured;
+ @EndUserText.label: 'Vehicle Leased'  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5370 ,
+    label: 'Vehicle Leased'
+  } ]
+  @UI.lineItem: [ {
+    position: 5370 ,
+    label: 'Vehicle Leased'
+  } ]
+
+  VehicleLeased;
+  
+  @EndUserText.label: 'Vehicle Make'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5380 , 
+    label: 'Vehicle Make'
+  } ]
+  @UI.lineItem: [ {
+    position: 5380 , 
+    label: 'Vehicle Make'
+  } ]
+
+  VehicleMake;
+
+
+@EndUserText.label: 'Vehicle Model'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5400 , 
+    label: 'Vehicle Model'
+  } ]
+  @UI.lineItem: [ {
+    position: 5400 , 
+    label: 'Vehicle Model'
+  } ]
+
+  VehicleModel;
+  
+
+  
+  @EndUserText.label: 'Vehicle Owner'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5420 , 
+    label: 'Vehicle Owner'
+  } ]
+  @UI.lineItem: [ {
+    position: 5420 , 
+    label: 'Vehicle Owner'
+  } ]
+
+  VehicleOwner;
+    
+  @EndUserText.label: 'Vehicle Year'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5440 , 
+    label: 'Vehicle Year'
+  } ]
+  @UI.lineItem: [ {
+    position: 5440 , 
+    label: 'Vehicle Year'
+  } ]
+  VehicleYear;
+ @EndUserText.label: 'Weather'
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5540,
+    label: 'Weather' 
+  } ]
+  @UI.lineItem: [ {
+    position: 5540 ,
+    label: 'Weather'
+  } ]
+
+  Weather;
+  
+@UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5610 
+  } ]
+  @UI.lineItem: [ {
+    position: 5610 
+  } ]
+
+  Createdby;
+  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5620 
+  } ]
+  @UI.lineItem: [ {
+    position: 5620 
+  } ]
+
+  Createdat;
+  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5630 
+  } ]
+  @UI.lineItem: [ {
+    position: 5630 
+  } ]
+
+  Lastchangedby;
+  
+ @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5640 
+  } ]
+  @UI.lineItem: [ {
+    position: 5640 
+  } ]
+
+  Lastchangedat;
+  
+   @EndUserText.label: 'Location Internal ID'
+   @UI.fieldGroup: [{ qualifier: 'values1', 
+    position: 5650 
+  } ]
+  Location_UUID;
+    
+  
+ }

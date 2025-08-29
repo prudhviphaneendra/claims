@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>Z_CLAIM_O</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <FIEL2>Z_CLREC_F</FIEL2>
+    <FIEL3>Z_CLMLOC_F</FIEL3>
+    <OCLSS>CPAE</OCLSS>
+   </TOBJ>
+   <TOBJ_ATTR>
+    <OBJCT>Z_CLAIM_O</OBJCT>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </TOBJ_ATTR>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>Z_CLAIM_O</OBJECT>
+    <TTEXT>AuthObject for Claims APP</TTEXT>
+   </TOBJT>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>Z_CLAIM_O</BROBJ>
+     <ACTVT>01</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Z_CLAIM_O</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Z_CLAIM_O</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Z_CLAIM_O</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,960 @@
+@Metadata.layer: #CORE
+//@Metadata.allowExtensions: true
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ClaimTrnUuid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ClaimTrnUuid'
+annotate view ZC_GRC_CLAIMTXN_HM with
+{
+  @EndUserText.label: 'ClaimTrnUuid'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'ClaimTrnUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'ClaimTrnUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+//   @UI: { hidden: true }  
+  ClaimTrnUuid;
+  
+  @EndUserText.label: 'ClaimUuid'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'ClaimUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'ClaimUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+//   @UI: { hidden: true }
+  ClaimUuid;
+  
+  @EndUserText.label: 'Claim Transaction External Id'
+  @UI.identification: [ {
+    position: 30 , 
+    label:'Claim Transaction External Id'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Claim Transaction External Id'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  ClaimTrnExternalId;
+  
+  @EndUserText.label: 'Record Type'
+  @UI.identification: [ {
+    position: 40 ,
+    label: 'Record Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+    label: 'Record Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+   
+//   @Consumption.valueHelpDefinition: 
+//      [{ entity: { name : 'ZI_GRC_DOMAIN_FIX_VAL', element: 'low' } ,
+//         additionalBinding: [{ element: 'domain_name' , 
+//                               localConstant: 'ZGRC_CLAIMTRN_TYPE', usage: #FILTER }]
+//                               , distinctValues: true
+//                               }]
+// @UI.textArrangement: #TEXT_ONLY
+  ClaimTrnRecType;
+  
+  @EndUserText.label: 'Adjustment'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Adjustment'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Adjustment'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Adjustment;
+  
+  @EndUserText.label: 'Amount'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Amount'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Amount'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Amount;
+  
+  @EndUserText.label: 'Bank Account Number'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Bank Account Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+   label: 'Bank Account Number'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  BankAccountNumber;
+  
+   @EndUserText.label:'Category'
+  @UI.identification: [ {
+    position: 80 ,
+    label:'Category'
+  } ]
+  @UI.lineItem: [ {
+    position: 80,
+    label:'Category' 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+//    @UI.textArrangement: #TEXT_ONLY
+  Category;
+  
+  @EndUserText.label: 'Check Number'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Check Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Check Number'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  CheckNumber;
+  
+  @EndUserText.label: 'Check Status'
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Check Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: 'Check Status'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  CheckStatus;
+  
+  @EndUserText.label: 'Coverage Major'
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Coverage Major'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Coverage Major'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  CoverageMajor;
+  
+  @EndUserText.label: 'Currency'
+  @UI.identification: [ {
+    position: 120 ,
+    label: 'Currency'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: 'Currency'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  CurrencyLookup;
+  
+  @EndUserText.label: 'Date Check Cleared'
+  @UI.identification: [ {
+    position: 130 , 
+    label:  'Date Check Cleared'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label:  'Date Check Cleared'
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  DateCheckCleared;
+  
+  @EndUserText.label: 'Date Check Issued'
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'Date Check Issued'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label:'Date Check Issued'
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  DateCheckIssued;
+  
+  @EndUserText.label: 'Date Check Status'
+  @UI.identification: [ {
+    position: 150 , 
+    label:  'Date Check Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label:  'Date Check Status'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  DateCheckStatus;
+  
+  @EndUserText.label: 'Date Of Invoice'
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'Date Of Invoice'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'Date Of Invoice'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  DateOfInvoice;
+  
+  @EndUserText.label: 'Date Pay Service Begin'
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'Date Pay Service Begin'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , 
+    label: 'Date Pay Service Begin'
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  DatePayServiceBegin;
+  
+  @EndUserText.label: 'Date Pay Service End'
+  @UI.identification: [ {
+    position: 180 , 
+    label: 'Date Pay Service End'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , 
+    label: 'Date Pay Service End'
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  DatePayServiceEnd;
+  
+  @EndUserText.label: 'Disability Code'
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'Disability Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'Disability Code'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  DisabilityCode;
+  
+  @EndUserText.label: 'ExpensePaid'
+  @UI.identification: [ {
+    position: 200 ,
+    label: 'ExpensePaid'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 ,
+    label: 'ExpensePaid'
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  ExpensePaid;
+  
+  @EndUserText.label: 'Expense Paid Delta'
+  @UI.identification: [ {
+    position: 210 , 
+    label: 'Expense Paid Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 , 
+    label: 'Expense Paid Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  ExpensePaidDelta;
+  
+  @EndUserText.label: 'Expense Recovery'
+  @UI.identification: [ {
+    position: 220 ,
+    label: ' Expense Recovery'
+  } ]
+  @UI.lineItem: [ {
+    position: 220 ,
+    label: ' Expense Recovery'
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  ExpenseRecovery;
+  
+  @EndUserText.label: 'Expense Recovery Delta'
+  @UI.identification: [ {
+    position: 230 , 
+    label: 'Expense Recovery Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 230 , 
+    label: 'Expense Recovery Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  ExpenseRecoveryDelta;
+  
+  @EndUserText.label: 'Expense Reserve Delta'
+  @UI.identification: [ {
+    position: 240 , 
+    label: 'Expense Reserve Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 240 , 
+    label: 'Expense Reserve Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  ExpenseReserveDelta;
+  
+  @EndUserText.label: 'Expense Reserve'
+  @UI.identification: [ {
+    position: 250 , 
+    label: 'Expense Reserve'
+  } ]
+  @UI.lineItem: [ {
+    position: 250 , 
+    label: 'Expense Reserve'
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  ExpenseReserve;
+  
+  @EndUserText.label: 'Indemnity PD Paid'
+  @UI.identification: [ {
+    position: 260 ,
+    label: 'Indemnity PD Paid'
+  } ]
+  @UI.lineItem: [ {
+    position: 260 ,
+    label: 'Indemnity PD Paid'
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  IndemnityPdPaid;
+  
+  @EndUserText.label: 'Indemnity PD Paid Delta'
+  @UI.identification: [ {
+    position: 270 , 
+    label: 'Indemnity PD Paid Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 270 , 
+    label: 'Indemnity PD Paid Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 270 
+  } ]
+  IndemnityPdPaidDelta;
+  
+  @EndUserText.label: 'Indemnity PD Recovery'
+  @UI.identification: [ {
+    position: 280 ,
+    label: 'Indemnity PD Recovery'
+  } ]
+  @UI.lineItem: [ {
+    position: 280 ,
+    label: 'Indemnity PD Recovery'
+  } ]
+  @UI.selectionField: [ {
+    position: 280 
+  } ]
+  IndemnityPdRecovery;
+  
+  @EndUserText.label: 'Indemnity Pd Recovery Delta'
+  @UI.identification: [ {
+    position: 290 , 
+   label: 'Indemnity Pd Recovery Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 290 , 
+    label: 'Indemnity Pd Recovery Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 290 
+  } ]
+  IndemnityPdRecoveryDelta;
+  
+  @EndUserText.label: 'Indemnity Pd Reserve'
+  @UI.identification: [ {
+    position: 300 ,
+    label: 'Indemnity Pd Reserve'
+  } ]
+  @UI.lineItem: [ {
+    position: 300 ,
+    label: 'Indemnity Pd Reserve'
+  } ]
+  @UI.selectionField: [ {
+    position: 300 
+  } ]
+  IndemnityPdReserve;
+  
+  @EndUserText.label: 'IndemnityPdReserveDelta'
+  @UI.identification: [ {
+    position: 310 , 
+    label: 'Indemnity Pd Reserve Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 310 , 
+    label: 'Indemnity Pd Reserve Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 310 
+  } ]
+  IndemnityPdReserveDelta;
+  
+  @EndUserText.label: 'Invoice Amount'
+  @UI.identification: [ {
+    position: 320 , 
+    label: 'Invoice Amount'
+  } ]
+  @UI.lineItem: [ {
+    position: 320 , 
+    label: 'Invoice Amount'
+  } ]
+  @UI.selectionField: [ {
+    position: 320 
+  } ]
+  InvoiceAmount;
+  
+  @EndUserText.label: 'Invoice Number'
+  @UI.identification: [ {
+    position: 330 , 
+    label: 'Invoice Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 330 , 
+    label: 'Invoice Number'
+  } ]
+  @UI.selectionField: [ {
+    position: 330 
+  } ]
+  InvoiceNumber;
+  
+  @EndUserText.label: 'Medical BI Paid'
+  @UI.identification: [ {
+    position: 340 ,
+    label: 'Medical BI Paid'
+  } ]
+  @UI.lineItem: [ {
+    position: 340 ,
+    label: 'Medical BI Paid'
+  } ]
+  @UI.selectionField: [ {
+    position: 340 
+  } ]
+  MedicalBiPaid;
+  
+  @EndUserText.label: 'Medical BI Paid Delta'
+  @UI.identification: [ {
+    position: 350 , 
+    label: 'Medical BI Paid Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 350 , 
+    label: 'Medical BI Paid Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 350 
+  } ]
+  MedicalBiPaidDelta;
+  
+  @EndUserText.label: 'Medical BI Recovery'
+  @UI.identification: [ {
+    position: 360 ,
+    label: 'Medical BI Recovery'
+  } ]
+  @UI.lineItem: [ {
+    position: 360 ,
+    label: 'Medical BI Recovery'
+  } ]
+  @UI.selectionField: [ {
+    position: 360 
+  } ]
+  MedicalBiRecovery;
+  
+  @EndUserText.label: 'Medical BI Recovery Delta'
+  @UI.identification: [ {
+    position: 370 , 
+label: 'Medical BI Recovery Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 370 , 
+ label: 'Medical BI Recovery Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 370 
+  } ]
+  MedicalBiRecoveryDelta;
+  
+  @EndUserText.label: 'Medical BI Reserve'
+  @UI.identification: [ {
+    position: 380 , 
+    label: 'Medical BI Reserve'
+  } ]
+  @UI.lineItem: [ {
+    position: 380 , 
+    label: 'Medical BI Reserve'
+  } ]
+  @UI.selectionField: [ {
+    position: 380 
+  } ]
+  MedicalBiReserveDelta;
+  
+  @EndUserText.label: 'Medical BI Reserve'
+  @UI.identification: [ {
+    position: 390 ,
+    label: 'Medical BI Reserve'
+  } ]
+  @UI.lineItem: [ {
+    position: 390 ,
+    label: 'Medical BI Reserve'
+  } ]
+  @UI.selectionField: [ {
+    position: 390 
+  } ]
+  MedicalBiReserve;
+  
+  @EndUserText.label: 'Pay Comment'
+  @UI.identification: [ {
+    position: 400 , 
+    label: 'Pay Comment'
+  } ]
+  @UI.lineItem: [ {
+    position: 400 , 
+    label: 'Pay Comment'
+  } ]
+  @UI.selectionField: [ {
+    position: 400 
+  } ]
+  PayComment;
+  
+  @EndUserText.label: 'Payee'
+  @UI.identification: [ {
+    position: 410 ,
+    label: 'Payee'
+  } ]
+  @UI.lineItem: [ {
+    position: 410 ,
+    label: 'Payee'
+  } ]
+  @UI.selectionField: [ {
+    position: 410 
+  } ]
+  PayeeLookup;
+  
+ 
+  @EndUserText.label: 'Payee Address Line 1'
+  @UI.identification: [ {
+    position: 430 ,
+    label: 'Payee Address Line 1'
+  } ]
+  @UI.lineItem: [ {
+    position: 430 ,
+    label: 'Payee Address Line 1'
+  } ]
+  @UI.selectionField: [ {
+    position: 430 
+  } ]
+  PayeeAddressLine1;
+  
+    @EndUserText.label: 'Payee Address Line 2'
+  @UI.identification: [ {
+    position: 420 ,
+    label: 'Payee Address Line 2'
+  } ]
+  @UI.lineItem: [ {
+    position: 420 ,
+    label: 'Payee Address Line 2'
+  } ]
+  @UI.selectionField: [ {
+    position: 420     
+  } ]
+  PayeeAddressLine2;
+  
+  @EndUserText.label: 'Payee City'
+  @UI.identification: [ {
+    position: 440 ,
+    label: 'Payee City'
+  } ]
+  @UI.lineItem: [ {
+    position: 440 ,
+    label: 'Payee City'
+  } ]
+  @UI.selectionField: [ {
+    position: 440 
+  } ]
+  PayeeCity;
+  
+  @EndUserText.label: 'Payee Contact'
+  @UI.identification: [ {
+    position: 450 ,
+    label: 'Payee Contact'
+  } ]
+  @UI.lineItem: [ {
+    position: 450 ,
+    label: 'Payee Contact'
+  } ]
+  @UI.selectionField: [ {
+    position: 450 
+  } ]
+  PayeeContact;
+  
+  @EndUserText.label: 'Payee Country'
+  @UI.identification: [ {
+    position: 460 
+  } ]
+  @UI.lineItem: [ {
+    position: 460 
+  } ]
+  @UI.selectionField: [ {
+    position: 460 
+  } ]
+  PayeeCountry;
+  
+  @EndUserText.label: 'Payee'
+  @UI.identification: [ {
+    position: 470 , 
+    label: 'Payee'
+  } ]
+  @UI.lineItem: [ {
+    position: 470 , 
+    label: 'Payee'
+  } ]
+  @UI.selectionField: [ {
+    position: 470 
+  } ]
+  Payee;
+  
+  @EndUserText.label: 'Payee Postal Code'
+  @UI.identification: [ {
+    position: 480 ,
+    label: 'Payee Postal Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 480 ,
+    label: 'Payee Postal Code'
+  } ]
+  @UI.selectionField: [ {
+    position: 480 
+  } ]
+  PayeePostalCode;
+  
+  @EndUserText.label: 'Payee State'
+  @UI.identification: [ {
+    position: 490 ,
+    label: 'Payee State'
+  } ]
+  @UI.lineItem: [ {
+    position: 490 ,
+    label: 'Payee State'
+  } ]
+  @UI.selectionField: [ {
+    position: 490 
+  } ]
+  PayeeState;
+  
+  @EndUserText.label: 'PayeeType'
+  @UI.identification: [ {
+    position: 500 ,
+    label: 'PayeeType'
+  } ]
+  @UI.lineItem: [ {
+    position: 500 ,
+    label: 'PayeeType'
+  } ]
+  @UI.selectionField: [ {
+    position: 500 
+  } ]
+  PayeeType;
+  
+  @EndUserText.label: 'Payment Status'
+  @UI.identification: [ {
+    position: 510 ,
+    label: 'Payment Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 510 ,
+    label: 'Payment Status'
+    
+  } ]
+  @UI.selectionField: [ {
+    position: 510 
+  } ]
+  PaymentStatus;
+  
+  @EndUserText.label: 'Quick Load'
+  @UI.identification: [ {
+    position: 520 , 
+    label: 'Quick Load'
+  } ]
+  @UI.lineItem: [ {
+    position: 520 , 
+    label: 'Quick Load'
+  } ]
+  @UI.selectionField: [ {
+    position: 520 
+  } ]
+  QuickLoad;
+  
+  @UI.identification: [ {
+    position: 530 
+  } ]
+  @UI.lineItem: [ {
+    position: 530 
+  } ]
+  @UI.selectionField: [ {
+    position: 530 
+  } ]
+  RecoveryReceivedOther2;
+  
+  @EndUserText.label: 'Recovery Received 3rd Party Delta'
+  @UI.identification: [ {
+    position: 540 , 
+    label:  'Recovery Received 3rd Party Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 540 , 
+    label:  'Recovery Received 3rd Party Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 540 
+  } ]
+  RecoveryReceivedOther2Delta;
+  
+  @EndUserText.label: 'Recovery Received from Insurance'
+  @UI.identification: [ {
+    position: 550 ,
+    label: 'Recovery Received from Insurance'
+  } ]
+  @UI.lineItem: [ {
+    position: 550 ,
+    label: 'Recovery Received from Insurance'
+  } ]
+  @UI.selectionField: [ {
+    position: 550 
+  } ]
+  RecoveryReceivedOther;
+  
+  @EndUserText.label: 'Recovery Received Insurance Delta'
+  @UI.identification: [ {
+    position: 560 , 
+    label: 'Recovery Received Insurance Delta'
+  } ]
+  @UI.lineItem: [ {
+    position: 560 , 
+    label: 'Recovery Received Insurance Delta'
+  } ]
+  @UI.selectionField: [ {
+    position: 560 
+  } ]
+  RecoveryReceivedOtherDelta;
+  
+  @EndUserText.label: 'Tax Id'
+  @UI.identification: [ {
+    position: 570 , 
+    label: 'Tax Id'
+  } ]
+  @UI.lineItem: [ {
+    position: 570 , 
+    label: 'Tax Id'
+  } ]
+  @UI.selectionField: [ {
+    position: 570 
+  } ]
+  TaxId;
+  
+  @UI.identification: [ {
+    position: 580 
+  } ]
+  @UI.lineItem: [ {
+    position: 580 
+  } ]
+  @UI.selectionField: [ {
+    position: 580 
+  } ]
+  TotalReserve;
+  
+  @EndUserText.label: 'Trankey'
+  @UI.identification: [ {
+    position: 590 , 
+    label: 'Trankey'
+  } ]
+  @UI.lineItem: [ {
+    position: 590 , 
+    label: 'Trankey'
+  } ]
+  @UI.selectionField: [ {
+    position: 590 
+  } ]
+  Trankey;
+  
+  @EndUserText.label: 'Transaction Code'
+  @UI.identification: [ {
+    position: 600 ,
+    label: 'Transaction Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 600 ,
+    label: 'Transaction Code'
+  } ]
+  @UI.selectionField: [ {
+    position: 600 
+  } ]
+  TransactionCode;
+  
+  @EndUserText.label: 'Transaction Date'
+  @UI.identification: [ {
+    position: 610 , 
+    label: 'Transaction Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 610 , 
+    label: 'Transaction Date'
+  } ]
+  @UI.selectionField: [ {
+    position: 610 
+  } ]
+  TransactionDate;
+  
+  @EndUserText.label: 'Transaction Sequence'
+  @UI.identification: [ {
+    position: 620 , 
+    label: 'Transaction Sequence'
+  } ]
+  @UI.lineItem: [ {
+    position: 620 , 
+    label: 'Transaction Sequence'
+  } ]
+  @UI.selectionField: [ {
+    position: 620 
+  } ]
+  TransactionSequence;
+  
+  @EndUserText.label: 'Transaction Status'
+  @UI.identification: [ {
+    position: 630 ,
+    label: 'Transaction Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 630 ,
+    label: 'Transaction Status'
+  } ]
+  @UI.selectionField: [ {
+    position: 630 
+  } ]
+  TransactionStatus;
+  
+  @EndUserText.label: 'Type'
+  @UI.identification: [ {
+    position: 640 ,
+    label: 'Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 640 ,
+    label: 'Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 640 
+  } ]
+  Type;
+  
+  @UI.identification: [ {
+    position: 650 
+  } ]
+  @UI.lineItem: [ {
+    position: 650 
+  } ]
+  @UI.selectionField: [ {
+    position: 650 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 660 
+  } ]
+  @UI.lineItem: [ {
+    position: 660 
+  } ]
+  @UI.selectionField: [ {
+    position: 660 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 670 
+  } ]
+  @UI.lineItem: [ {
+    position: 670 
+  } ]
+  @UI.selectionField: [ {
+    position: 670 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 680 
+  } ]
+  @UI.lineItem: [ {
+    position: 680 
+  } ]
+  @UI.selectionField: [ {
+    position: 680 
+  } ]
+  Lastchangedat;
+}

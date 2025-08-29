@@ -1,0 +1,15 @@
+@EndUserText: {
+label: 'ZC_GRC_CLAIMS_FINES_DUTIES'
+}
+@ObjectModel: {
+leadingEntity: {
+name: 'ZC_GRC_CLAIMS_FINES_DUTIES'
+}
+}
+define service ZUI_GRC_CLAIMS_FINES_DUTIES_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_CLAIMS_FINES_DUTIES    as CLAIM;
+  expose ZC_GRC_CLAIMSTXN_FINES_DUTIES as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

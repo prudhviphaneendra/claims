@@ -1,0 +1,15 @@
+@EndUserText: {
+label: 'ZC_GRC_CL_GL_EMP_LIABILITY'
+}
+@ObjectModel: {
+leadingEntity: {
+name: 'ZC_GRC_CL_GL_EMP_LIABILITY'
+}
+}
+define service ZUI_GRC_CL_GL_EMP_LIABILITY_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_CL_GL_EMP_LIABILITY    as CLAIM;
+  expose ZC_GRC_CLTXN_GL_EMP_LIABILITY as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZGRC_IAM_C_AL_DEL_EXT</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>IAM App For Claim AL Delete</DESCRIPTION>
+     <RESPONSIBLE>CB9980000020</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>CR1</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZGRC_CLAIM</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZGRC_IAM_C_AL_DEL_EXT</APP_ID>
+    <APP_TYPE>EXT</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZUI_GRC_CLAIMS_AL_O4</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZGRC_IAM_C_AL_DEL_EXT</APP_ID>
+      <SRVC_NAME>966F3649F46A6BB5FED5211FFE9F4A</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>ZUI_GRC_CLAIMS_AL_O4</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <AUTH>
+     <item>
+      <AUTH_OBJECT>Z_CLAIM_O</AUTH_OBJECT>
+      <STATUS>G</STATUS>
+      <TEXT>AuthObject for Claims APP</TEXT>
+      <AUTH_ITEM>
+       <item>
+        <UUID>+k3d9qSSH+Cf/hRubWc7wA==</UUID>
+        <AUTH_OBJECT>Z_CLAIM_O</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0001</AUTH_OBJECT_INSTANCE>
+        <IBS_SOURCE>966F3649F46A6BB5FED5211FFE9F4A</IBS_SOURCE>
+        <IBS_SOURCE_TYPE>HT</IBS_SOURCE_TYPE>
+        <TEXT>AuthObject for Claims APP</TEXT>
+        <STATUS>G</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUE>Delete</VALUE>
+          <VALUES>
+           <item>
+            <UUID>+k3d9qSSH+Cf/hRubWdbwA==</UUID>
+            <LOW_VALUE>06</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>G</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+         <item>
+          <FIELD>Z_CLREC_F</FIELD>
+          <VALUES>
+           <item>
+            <UUID>+k3d9qSSH+Cf/hRubWebwA==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Data Element for Picklist Numbering</TEXT>
+          <STATUS>S</STATUS>
+         </item>
+         <item>
+          <FIELD>Z_CLMLOC_F</FIELD>
+          <VALUES>
+           <item>
+            <UUID>+k3d9qSSH+Cf/hRubWd7wA==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Claim Location</TEXT>
+          <STATUS>S</STATUS>
+         </item>
+        </VALUES>
+       </item>
+       <item>
+        <UUID>+k3d9qSSH+Cf/hRubWe7wA==</UUID>
+        <AUTH_OBJECT>Z_CLAIM_O</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0002</AUTH_OBJECT_INSTANCE>
+        <IBS_SOURCE>966F3649F46A6BB5FED5211FFE9F4A</IBS_SOURCE>
+        <IBS_SOURCE_TYPE>HT</IBS_SOURCE_TYPE>
+        <TEXT>AuthObject for Claims APP</TEXT>
+        <STATUS>S</STATUS>
+        <INACTIVE>X</INACTIVE>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUES>
+           <item>
+            <UUID>+k3d9qSSH+Cf/hRubWfbwA==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>S</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+         <item>
+          <FIELD>Z_CLREC_F</FIELD>
+          <VALUES>
+           <item>
+            <UUID>+k3d9qSSH+Cf/hRubWgbwA==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Data Element for Picklist Numbering</TEXT>
+          <STATUS>S</STATUS>
+         </item>
+         <item>
+          <FIELD>Z_CLMLOC_F</FIELD>
+          <VALUES>
+           <item>
+            <UUID>+k3d9qSSH+Cf/hRubWf7wA==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Claim Location</TEXT>
+          <STATUS>S</STATUS>
+         </item>
+        </VALUES>
+       </item>
+      </AUTH_ITEM>
+     </item>
+    </AUTH>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

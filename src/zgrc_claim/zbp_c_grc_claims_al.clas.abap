@@ -1,0 +1,5 @@
+CLASS zbp_c_grc_claims_al DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zc_grc_claims_al.
+ENDCLASS.
+
+CLASS zbp_c_grc_claims_al IMPLEMENTATION.
+ENDCLASS.

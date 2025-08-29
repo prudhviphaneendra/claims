@@ -1,0 +1,30 @@
+projection implementation in class zbp_c_grc_claims_ccc unique;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_GRC_CLAIMS_CCC //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action payment;
+  use action closeclaim;
+  use action copyclaim;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Resume;
+  use action Prepare;
+
+ use association _claim_trn { create; with draft; }
+}
+
+define behavior for ZC_TGRC_CLAIMTXN_CCC //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Claim { with draft; }
+}

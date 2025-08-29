@@ -1,0 +1,90 @@
+@Metadata.allowExtensions: true
+@EndUserText.label: 'Claim Transaction'
+@AccessControl.authorizationCheck: #CHECK
+define view entity ZC_TGRC_CLAIM_TRN
+  as projection on ZR_TGRC_CLAIM_TRN
+{
+
+  key ClaimUuid,
+  key ClaimTrnUuid,
+      ClaimTrnExternalId,
+      @ObjectModel.text.element:  ['RecordType']
+      @UI.textArrangement: #TEXT_ONLY
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZR_CLAIMTRN_RECTYPE_PL', element: 'Id' } }]
+      ClaimTrnRecType,
+      _ClaimTrn_RecType_PL as RecordType,
+      Adjustment,
+      Amount,
+      BankAccountNumber,
+      @ObjectModel.text.element:  ['TrnCategory']
+      @UI.textArrangement: #TEXT_ONLY
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZR_CLAIMTRN_CATEGORY_PL', element: 'Id' } }]
+      Category,
+      _ClaimTrn_Category_PL as TrnCategory,
+      CheckNumber,
+      CheckStatus,
+      CoverageMajor,
+      @Semantics.currencyCode: true
+      CurrencyCode,
+      CurrencyLookup,
+      DateCheckCleared,
+      DateCheckIssued,
+      DateCheckStatus,
+      DateOfInvoice,
+      DatePayServiceBegin,
+      DatePayServiceEnd,
+      DisabilityCode,
+      ExpensePaid,
+      ExpensePaidDelta,
+      ExpenseRecovery,
+      ExpenseRecoveryDelta,
+      ExpenseReserveDelta,
+      ExpenseReserve,
+      IndemnityPdPaid,
+      IndemnityPdPaidDelta,
+      IndemnityPdRecovery,
+      IndemnityPdRecoveryDelta,
+      IndemnityPdReserve,
+      IndemnityPdReserveDelta,
+      InvoiceAmount,
+      InvoiceNumber,
+      MedicalBiPaid,
+      MedicalBiPaidDelta,
+      MedicalBiRecovery,
+      MedicalBiRecoveryDelta,
+      MedicalBiReserveDelta,
+      MedicalBiReserve,
+      PayComment,
+      PayeeLookup,
+      PayeeAddressLine2,
+      PayeeAddressLine1,
+      PayeeCity,
+      PayeeContact,
+      PayeeCountry,
+      Payee,
+      PayeePostalCode,
+      PayeeState,
+      PayeeType,
+      PaymentStatus,
+      QuickLoad,
+      RecoveryReceivedOther2,
+      RecoveryReceivedOther2Delta,
+      RecoveryReceivedOther,
+      RecoveryReceivedOtherDelta,
+      TaxId,
+      TotalReserve,
+      Trankey,
+      TransactionCode,
+      TransactionDate,
+      TransactionSequence,
+      TransactionStatus,
+      Type,
+      Createdby,
+      Createdat,
+      Lastchangedby,
+      Lastchangedat,
+      _Claim : redirected to parent ZC_TGRC_CLAIM,
+      _ClaimTrn_RecType_PL,
+      _ClaimTrn_Category_PL
+
+}

@@ -1,0 +1,15 @@
+@EndUserText: {
+label: 'ZC_GRC_INCIDENT_ONLY_GL'
+}
+@ObjectModel: {
+leadingEntity: {
+name: 'ZC_GRC_INCIDENT_ONLY_GL'
+}
+}
+define service ZUI_GRC_INCIDENT_ONLY_GL_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_INCIDENT_ONLY_GL    as CLAIM;
+  expose ZC_GRC_INCIDENTTXN_ONLY_GL as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

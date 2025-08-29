@@ -1,0 +1,15 @@
+@EndUserText: {
+label: 'ZC_GRC_WORKERS_COMPENSATION'
+}
+@ObjectModel: {
+leadingEntity: {
+name: 'ZC_GRC_WORKERS_COMPENSATION'
+}
+}
+define service ZUI_GRC_WORKER_COMPENSATION_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_WORKERS_COMPENSATION    as CLAIM;
+  expose ZC_GRC_WORKERSTXN_COMPENSATION as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

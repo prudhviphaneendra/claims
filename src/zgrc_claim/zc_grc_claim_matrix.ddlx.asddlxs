@@ -1,0 +1,19 @@
+@Metadata.layer: #CORE
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'SortOrder', direction: #ASC  }] }]
+annotate view ZC_GRC_CLAIM_MATRIX
+    with 
+{
+    
+     @UI.lineItem: [{ position:10, label: 'Category' }]
+    Category;
+     @UI.lineItem: [{ position:20, label: 'Paid' }]
+    Paid;
+     @UI.lineItem: [{ position:30, label: 'Outstanding' }]
+    Outstanding;
+     @UI.lineItem: [{ position:40, label: 'Incurred' }]
+    Incurred;
+//    CurrencyCode;
+//    SortOrder;
+    
+}

@@ -1,0 +1,15 @@
+@EndUserText: {
+  label: 'ZC_GRC_CLAIM_MARINE'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_GRC_CLAIM_MARINE'
+  }
+}
+define service ZUI_GRC_CLAIM_MARINE_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_CLAIM_MARINE    as CLAIM;
+  expose ZC_GRC_CLAIMTXN_MARINE as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

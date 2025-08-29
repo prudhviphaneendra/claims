@@ -1,0 +1,15 @@
+@EndUserText: {
+label: 'ZC_GRC_CLAIMS_GRM_PROPERTY'
+}
+@ObjectModel: {
+leadingEntity: {
+name: 'ZC_GRC_CLAIMS_GRM_PROPERTY'
+}
+}
+define service ZUI_GRC_CLAIMS_GRM_PROPERTY_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_CLAIMS_GRM_PROPERTY as CLAIM;
+  expose ZC_GRC_GRMTXN_PROPERTY     as CLAIMTXN;
+  expose ZC_GRC_CLAIM_MATRIX;
+  expose ZR_GRC_CLAIM_MATRIX;
+}

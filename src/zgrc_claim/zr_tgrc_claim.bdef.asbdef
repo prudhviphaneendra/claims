@@ -1,0 +1,1290 @@
+managed with additional save implementation in class ZBP_R_TGRC_CLAIM unique;
+strict ( 2 );
+with draft;
+//added by PPT020
+define own authorization context
+{
+  'Z_CLAIM_O';
+}
+//ADDEDBY PPT020
+
+define behavior for ZR_TGRC_CLAIM alias Claim
+persistent table ZTGRC_CLAIM
+draft table ZTGRC_CLAIM_D
+etag master Lastchangedat
+lock master total etag Lastchangedat
+authorization master( global,instance )
+{
+association _Claim_trn { create ( features : instance ) ; with draft;  }
+
+field( mandatory : update )
+InsuredName; // InsuredName added by PPT020
+
+
+  field ( readonly )
+  ClaimRecType,
+   ClaimUuid,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+  field ( numbering : managed )
+   ClaimUuid;
+
+
+  create( features : global , precheck );
+  update( features : global , precheck );
+  delete;
+
+ field ( features : instance )  ClaimExternalId,
+  X2ndWitness,
+  X3rdPartyClaimSubmittedTo,
+  X3rdPartyClaimsReceivedTtl,
+  X3rdPartyClaimsSettledTtl,
+  X3rdPartyPropertyDamage,
+  X3rdPartyLiability,
+  X3rdPartyRecoveriesUsd,
+  X3rdRecoveryObtainedFormula,
+  X3rdRecoveryObtainedz,
+  X3rdRecoveryPursuedFormula,
+  X3rdRecoveryPursuedz,
+  PropetyType,
+  AboveClaimThreshold,
+  AboveDeductibleClaim,
+  AccidentType,
+  Activity,
+  AdjusterBranch,
+  AdjusterClaim,
+  AdjusterEmail,
+  AdjusterName,
+  AdjusterPhone,
+  AgreedActions,
+  DestinationCountry,
+  AllegedClaimedUnitS,
+  InjuryDescription,
+  AmountReceived,
+  AmountSubmitted,
+  AreaIncidentOccurred,
+  ArrivalDate,
+  Asset,
+  AssetCategory,
+  AssetName,
+  AssetNameSrc,
+  AssetType,
+  AverageWeeklyWage,
+  BL,
+  BLNumber,
+  BelowDeductible,
+  BelowDeductibleClaim,
+  BillOfLadingNumber,
+  DateClaimantBorn,
+  BodyPart,
+  Brand,
+  BrandCiClaims,
+  BreakBulkType,
+  Chargeable,
+  BuClaimsHandler,
+  BusinessUnit2,
+  BusinessUnit,
+  CargoTypeCommodity,
+  Carrier,
+  CarrierBlNumber,
+  CaseDesc,
+  CasualtyYearNo,
+  Cause,
+  CauseSrc,
+  CertificateNumber,
+  ChargeName,
+  Chassis,
+  ChassisOwner,
+  Circumstances,
+  CitationType,
+  ClaimAge,
+  ClaimAmount,
+  ClaimAssetType,
+  ConfirmedByTtClub,
+  StatusCount,
+  ClaimCountry,
+  ClaimDescriptionMaerskDamco,
+  ClaimKey,
+  ClaimNature,
+  ClaimName,
+  ClaimConfirmedByInsurer,
+  ClaimLocation1,
+  ClaimTurnaround,
+  ClaimantAddressLine1,
+  ClaimantAddressLine2,
+  ClaimantAge,
+  ClaimantCity,
+  ClaimantCountry,
+  ClaimantFirstName,
+  ClaimantGender,
+  ClaimantLastName,
+  ClaimantLengthService,
+  ClaimantMaritalStatus,
+  ClaimantMaritalStatusSrc,
+  ClaimantMiddleInitial,
+  ClaimantMinor,
+  ClaimantName,
+  ClaimantNameEntry,
+  ClaimantPhone,
+  ClaimantPostalCode,
+  Reference,
+  ClaimantSsn,
+  ClaimantState,
+  ClaimantWorkPhone,
+  ClaimantSReferenceNumber,
+  ClaimedAmountUsd,
+  ClaimingParty,
+  ClientReportLag,
+  CloseType,
+  Commodity,
+  CompensationAct,
+  CompensationRate,
+  CompensationTotal,
+  ConcurrentClaim,
+  ConditionOfClassImposed,
+  ContainerNumber,
+  XContainerNumber,
+  ContainerOwner,
+  ContainerPosition,
+  ContainerSize,
+  ContainerType,
+  ContainersDamagedDestroyed,
+  ContainersLostOverboard,
+  ContingentLiability,
+  ControllingCountry,
+  ControllingEntity,
+  ControllingRegion,
+  Controverted,
+  CountyFiled,
+  Court,
+  CoverageMajor,
+  CoverageMajorDescription,
+  CoverageMinor,
+  Createdb,
+  CreatedDateSrcC,
+  CrewNationality,
+  Nationality,
+  CrewRank,
+  CrossReference,
+  CurrencyGrmUsd,
+  Currency,
+  CurrencyLookup,
+  Customer,
+  DaAppointed,
+  DaAppointedDate,
+  DaEmail,
+  DaFirmName,
+  DaHourlyRate,
+  DaName,
+  DaPhone,
+  Damage,
+  DamageCausedBy3rdParty,
+  DamageEstimate,
+  DateClaimantDied,
+  DateClosed,
+  DateDataLoadInsert,
+  DateDataLoadUpdate,
+  DateHired,
+  DateIndemnityReceived,
+  DateLastWorked,
+  DateLossOfTime,
+  DtOfClaimReportToInsurer,
+  DtOfClaimReportToMskdamco,
+  DateOfLastActivity,
+  DateOfSurvey,
+  DateOfTimeBar3rdParty,
+  DateOfTimeBarClaimant,
+  DateOpened,
+  DateReceived,
+  DateReopened,
+  ReportedToInsurer,
+  DateReportedToTpa,
+  DateReturnedToWork,
+  DtRiskMgmtReviewComplete,
+  SettlementDate,
+  DateSubmitted,
+  DateSubmittedToInsurer,
+  DateSubrogationSubmitted,
+  DateSuitFiled,
+  DayOfWeek,
+  DayOfWeekSrc,
+  DaysOffWorkTotal,
+  DaysToConversion,
+  DaysToDecision,
+  DaysToReply,
+  DcliEmployee,
+  DecisionMade,
+  Deductible,
+  DeductibleFromPolicy,
+  DeductibleTotal,
+  DeferredRepairs,
+  DemandAmount,
+  Department,
+  DescribeMedicalTreatment,
+  Description,
+  DescriptionOfEvent,
+  Diagnosis,
+  DateOfFirstDisability,
+  LocationGrm,
+  DoingUsualWork,
+  DriverAddress,
+  DriverBirthDate,
+  DriverCity,
+  DriverName,
+  DriverPhone,
+  DriverPostalCode,
+  DriverSs,
+  DriverState,
+  DriversAge,
+  OriginCountry,
+  SettlingAbvLglliabilityAmt,
+  EmployeeJobTitle,
+  EmployerPremises,
+  EquipmentId,
+  EquipmentOperator,
+  EquipmentType,
+  EquipmentInfrastructureType,
+  EstimateTotalFormula,
+  EstimateTotal,
+  EventType,
+  ExactLocation,
+  ExptForTtClubToConfirm,
+  ExpectedSettlementAmountUsd,
+  ExpenseIncurredCurr2,
+  ExpenseIncurredCurr1,
+  ExpenseOutstandingCurr2,
+  ExpenseOutstandingCurr1,
+  ExpensePaidCurr2,
+  ExpensePaidCurr1,
+  ExpertInvolved,
+  ExpirationDate,
+  FCode,
+  Fatality,
+  FcrNumber,
+  FederalCourt,
+  FeesOutstandingTotal,
+  FeesPaidTotal,
+  FileLocation,
+  Port,
+  FinalSettlementTargetDate,
+  FitForDutyDate,
+  FitnessForDuty,
+  Flag,
+  FleetGroup,
+  FormerAdjusterClaim,
+  Gap,
+  GensetNumber,
+  GlbclmOwner,
+  GrmClaimsHandler,
+  GrossIncurredCurr2,
+  GrossIncurredCurr1,
+  GrossOutstandingCurr2,
+  GrossOutstandingCurr1,
+  GrossPaidCurr2,
+  GrossPaidCurr1,
+  GrossRegisteredTonnage,
+  HandlerBu,
+  HandlerSrcDel,
+  HandlingCountry,
+  HandlingEntity,
+  HandlingRegion,
+  HealthcareFacilityAddrline1,
+  HealthcareFacilityAddrline2,
+  HealthcareFacilityCity,
+  HealthcareFacilityName,
+  HealthcareFacilityPostalcode,
+  HealthcareFacilityState,
+  HierarchyNodeAp,
+  HighwayDirection,
+  HospitalizedOvernight,
+  HsCode,
+  HsseLearningPacks,
+  ImoNumber,
+  InLitigation,
+  IncidentMonth,
+  IncidentQuarter,
+  BuClaim,
+  IncidentToClaimDate,
+  IncidentYear,
+  IndemnityIncurredCurr2,
+  IndemnityIncurredCurr1,
+  IndemnityOutstandingCurr2,
+  IndemnityOutstandingCurr1,
+  IndemnityPaidCurr2,
+  IndemnityPaidCurr1,
+  InfrastructureDesc,
+  InitialEstimate,
+  Injured,
+  InjuryCauseDeath,
+  InjuryType,
+  TpaCarrier,
+  InsuranceSurvey,
+  InsuranceSurveyDt,
+//  InsuredName,
+  Insurer,
+  InsurerClaim,
+  InsurerProvisionUsdDamco,
+  InsurerReferenceNumber,
+  InvoiceNumberSap,
+  IpsCenterProvisionCurrency,
+  IpsCenterProvisionUsdDamco,
+  IpsCenterProvisionUsd,
+  LastCloseDate,
+  LastSubmitDate,
+  LegalLiabilityAmountUsd,
+  LegalStatusPicklist,
+  LightConditions,
+  LimitationFund,
+  LimitationFundCurrency,
+  Litigation,
+  LitigationStatusGrm,
+  LegalStatus,
+  LossJuristiction,
+  LocalProvisionDamco,
+  LocalProvisionCurrency,
+  HierarchyNode,
+  ClaimLocation,
+  LocationLookup,
+  LocationName,
+  LocationSubBusinessUnit,
+  LongTerm,
+  AccidentAddressLine2,
+  AccidentAddressLine1,
+  AccidentCity,
+  LossCountry,
+  AccidentCountry,
+  DateOfLoss,
+  AccidentDescription,
+  LossJurisdiction,
+  AccidentPostalCode,
+  AccidentState,
+  LostDays,
+  LostTimeIndicator,
+  LostWagesEarningCapacity,
+  LouSecurityAmount,
+  LouSecurityCurrency,
+  MaerskCompany,
+  MaerskDamcoBlNumber,
+  MainActivity,
+  MainCasualty,
+  MainCause,
+  MainEvent,
+  StarsDeductible,
+  MediationDate,
+  MedicalBiIncurred,
+  MedicalBiPaid,
+  MedicalIncurredCurr2,
+  MedicalIncurredCurr1,
+  MedicalOutstandingCurr2,
+  MedicalOutstandingCurr1,
+  MedicalPaidCurr2,
+  MedicalPaidCurr1,
+  MedicalTreatmentOnboard,
+  MedicareLien,
+  MedicareReportable,
+  MescEmployee,
+  MiasShare,
+  MiasShareManual,
+  VoidDate,
+  ModeOfTransport,
+  NameOfWatercraft,
+  NameTitleReportedTo,
+  Nature,
+  NearestLandmark,
+  NetIncurredCurr2,
+  NetIncurredCurr1,
+  NetOutstandingCurr2,
+  NetOutstandingCurr1,
+  NetPaidCurr2,
+  NetPaidCurr1,
+  NetRetention,
+  NetRtntEur,
+  NetRtntUsd,
+  NewDisabilityPeriod,
+  NotifiedDate,
+  Occupation,
+  Occurrence,
+  OccurrenceNumber,
+  OccurrenceType,
+  Ocl,
+  OcuClaim,
+  OffBsCentreCurrency,
+  OffBsCountriesCurrency,
+  OffsiteMedicalTreatmentDel,
+  OldDamcoReferenceNumber,
+  OshaRecordable,
+  OtherCarriers,
+  OtherVehicles,
+  Owcp,
+  PIAad,
+  PIClubNew,
+  PIClubNames,
+  PaAppointed,
+  PaAppointedDate,
+  PaEmail,
+  PaFirmName,
+  PaName,
+  PaPhone,
+  SettledLegalCost,
+  PaidSettledLegalCostsUsd,
+  PaidSettledAmountUsd,
+  PartGeneralDelDel,
+  PermanentRepairs,
+  PersonName,
+  PhysicalFile,
+  PhysicianName,
+  PlannedRepairDate,
+  PoliceDeptName,
+  PoliceReport,
+  PolicyEffectiveDate,
+  PolicyExpirationDateDel,
+  PolicyName,
+  PolicyLookup,
+  PolicyNumberNew,
+  PolicyNumber,
+  PolicySectionLookup,
+  PolicyYearNew,
+  PolicyYear,
+  FinalDestination,
+  PortOfDischarge,
+  PortOfOrigin,
+  PortOfLoading,
+  PortOfReceipt,
+  PermanentPortOfRepair,
+  TemporaryPortOfRepair,
+  PortSInvolved,
+  Preventable,
+  PropertyLookup,
+  Recommendation,
+  RecommendationComments,
+  RecordTypeCustom,
+  RecoveryFrom3rdPartyCurr2,
+  RecoveryFrom3rdPartyCurr1,
+  RecoveryReceived,
+  RecoveryFromInsuranceCurr2,
+  RecoveryFromInsuranceCurr1,
+  RecoveryOwner,
+  RecoveryPursued,
+  RecoveryStatus,
+  RedFlag,
+  RegionSrc,
+  PermanentRepairCompleteDate,
+  TemporaryRepairCompleteDate,
+  PermanentRepairDescription,
+  TemporaryRepairDescription,
+  PermanentRepairStartDate,
+  TemporaryRepairStartDate,
+  RepairsCompletedInPort,
+  VsaPartner,
+  ReplyDate,
+  DateReportedToClient,
+  ReportedToBroker,
+  ReportingDepartment,
+  ResponseDate,
+  X3rdPartyName,
+  Responsible3rdPartyCode,
+  ResponsiblePartyCode,
+  RestrictedDays,
+  RetainedEarningCapacity,
+  RootCause,
+  ZzzCauseCode,
+  Salvage,
+  Savings,
+  Seal,
+  ServedDate,
+  SettlementAmount,
+  SettlementStatus,
+  Severity,
+  ShippersInstructions,
+  Shift,
+  PolicyExpirationDate,
+  SurveyDate,
+  PropertyType,
+  SourceGeneralDel,
+  Specification,
+  StateFiled,
+  StateFundRecovIndicatorDel,
+  StateOfEmploymentDel,
+  StateOfJurisdiction,
+  Status,
+  StatusClosedCount,
+  StatusDetail,
+  StatusOpenCount,
+  SubType,
+  SubmitToTpa,
+  SubmittedForReimb,
+  SubmittedTo3rdParty,
+  SubrogationGrm,
+  Subrogation,
+  SubrogationAmountReceived,
+  SubrogationAmountSubmitted,
+  SubrogationIndicatorDel,
+  SubrogationSubmittedTo,
+  SuitFiledDate,
+  Superintendent,
+  SupervisorName,
+  SurveyReportYN,
+  SurveyRequested,
+  SurveyedAt,
+  SurveyorName,
+  TakeoverIndicator,
+  TemporaryRepairs,
+  TerminalsLoad,
+  ThirdPartyInsuranceCoDel,
+  ThirdPartyPolicyNumberDel,
+  TimbarDateSubrogation,
+  TimeBar,
+  AccidentTime,
+  TimebarDateCDel,
+  TimebarDateApmmVsInsurance,
+  TimebarDateClaimantVsApmm,
+  TimebarDateSubrogation,
+  TotalDeductible,
+  TotalDeductibleCurr2,
+  TotalDeductibleCurr1,
+  TtlNoDamageBoxesPkgWeig,
+  TotalMiasShare,
+  TotalRepairCostDel,
+  TotalRepairCostRaw,
+  TotalRepairCostTotal,
+  TpaCarrierAccountCode,
+  TpaCarrierLookupDel,
+  TpaDate,
+  TpaPaid,
+  TpaReportLag,
+  TpaReserve,
+  TradeUnion,
+  TreatedInEmergencyRoomDel,
+  TrialDate,
+  TruckingCompanyAddress,
+  TruckingCompanyCity,
+  TruckingCompanyContact,
+  TruckingCompanyName,
+  TruckingCompanyPhone,
+  TruckingCompanyZip,
+  TruckingCompanyState,
+  TypeOfPropertyDamaged,
+  TypeOfWatercraftDamaged,
+  UnderwritersReserveTotal,
+  UninsuredUnderinsured,
+  VehicleInspectionDate,
+  VehicleLeaseDateDel,
+  VehicleLeased,
+  VehicleMake,
+  ClaimantVehicleMake,
+  VehicleModel,
+  ClaimantVehicleModel,
+  VehicleOwner,
+  VehicleOwnerName,
+  VehicleYear,
+  ClaimantVehicleYear,
+  Probability,
+  Vessel,
+  VesselName,
+  VesselOperator,
+  VesselOwnerName,
+  VesselAircraft,
+  Voyage,
+  VoyageNumber,
+  Weather,
+  WeeklyWages,
+  WhoOwnsProperty,
+  WorkRelatedDel,
+  WorkRestrictionsDel,
+  YearOfLoss,
+  YearlyWagesDel ;
+
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+action payment result [1] $self;
+ // instance action and dynamic action control
+  //action ( features : instance ) payment result [1] $self;
+  //action ( features : instance ) rejectTravel result [1] $self;
+// instance action and dynamic action control
+  action ( features : instance ) closeclaim result [1] $self;
+factory action copyclaim[1..*];
+
+determination ClaimRecType on save { field ClaimUuid; }
+determination determine_RecType on modify { field ClaimUuid; }
+
+  mapping for ZTGRC_CLAIM
+  {
+    ClaimUuid = claim_uuid;
+    ClaimExternalId = claim_external_id;
+    ClaimRecType = claim_rec_type;
+    X2ndWitness = x2nd_witness;
+    X3rdPartyClaimSubmittedTo = x3rd_party_claim_submitted_to;
+    X3rdPartyClaimsReceivedTtl = x3rd_party_claims_received_ttl;
+    X3rdPartyClaimsSettledTtl = x3rd_party_claims_settled_ttl;
+    X3rdPartyPropertyDamage = x3rd_party_property_damage;
+    X3rdPartyLiability = x3rd_party_liability;
+    X3rdPartyRecoveriesUsd = x3rd_party_recoveries_usd;
+    X3rdRecoveryObtainedFormula = x3rd_recovery_obtained_formula;
+    X3rdRecoveryObtainedz = x3rd_recovery_obtainedz;
+    X3rdRecoveryPursuedFormula = x3rd_recovery_pursued_formula;
+    X3rdRecoveryPursuedz = x3rd_recovery_pursuedz;
+    PropetyType = propety_type;
+    AboveClaimThreshold = above_claim_threshold;
+    AboveDeductibleClaim = above_deductible_claim;
+    AccidentType = accident_type;
+    Activity = activity;
+    AdjusterBranch = adjuster_branch;
+    AdjusterClaim = adjuster_claim;
+    AdjusterEmail = adjuster_email;
+    AdjusterName = adjuster_name;
+    AdjusterPhone = adjuster_phone;
+    AgreedActions = agreed_actions;
+    DestinationCountry = destination_country;
+    AllegedClaimedUnitS = alleged_claimed_unit_s;
+    InjuryDescription = injury_description;
+    AmountReceived = amount_received;
+    AmountSubmitted = amount_submitted;
+    AreaIncidentOccurred = area_incident_occurred;
+    ArrivalDate = arrival_date;
+    Asset = asset;
+    AssetCategory = asset_category;
+    AssetName = asset_name;
+    AssetNameSrc = asset_name_src;
+    AssetType = asset_type;
+    AverageWeeklyWage = average_weekly_wage;
+    BL = b_l;
+    BLNumber = b_l_number;
+    BelowDeductible = below_deductible;
+    BelowDeductibleClaim = below_deductible_claim;
+    BillOfLadingNumber = bill_of_lading_number;
+    DateClaimantBorn = date_claimant_born;
+    BodyPart = body_part;
+    Brand = brand;
+    BrandCiClaims = brand_ci_claims;
+    BreakBulkType = break_bulk_type;
+    Chargeable = chargeable;
+    BuClaimsHandler = bu_claims_handler;
+    BusinessUnit2 = business_unit2;
+    BusinessUnit = business_unit;
+    CargoTypeCommodity = cargo_type_commodity;
+    Carrier = carrier;
+    CarrierBlNumber = carrier_bl_number;
+    CaseDesc = case_desc;
+    CasualtyYearNo = casualty_year_no;
+    Cause = cause;
+    CauseSrc = cause_src;
+    CertificateNumber = certificate_number;
+    ChargeName = charge_name;
+    Chassis = chassis;
+    ChassisOwner = chassis_owner;
+    Circumstances = circumstances;
+    CitationType = citation_type;
+    ClaimAge = claim_age;
+    ClaimAmount = claim_amount;
+    ClaimAssetType = claim_asset_type;
+    ConfirmedByTtClub = confirmed_by_tt_club;
+    StatusCount = status_count;
+    ClaimCountry = claim_country;
+    ClaimDescriptionMaerskDamco = claim_description_maersk_damco;
+    ClaimKey = claim_key;
+    ClaimNature = claim_nature;
+    ClaimName = claim_name;
+    ClaimConfirmedByInsurer = claim_confirmed_by_insurer;
+    ClaimLocation1 = claim_location1;
+    ClaimTurnaround = claim_turnaround;
+    ClaimantAddressLine1 = claimant_address_line1;
+    ClaimantAddressLine2 = claimant_address_line2;
+    ClaimantAge = claimant_age;
+    ClaimantCity = claimant_city;
+    ClaimantCountry = claimant_country;
+    ClaimantFirstName = claimant_first_name;
+    ClaimantGender = claimant_gender;
+    ClaimantLastName = claimant_last_name;
+    ClaimantLengthService = claimant_length_service;
+    ClaimantMaritalStatus = claimant_marital_status;
+    ClaimantMaritalStatusSrc = claimant_marital_status_src;
+    ClaimantMiddleInitial = claimant_middle_initial;
+    ClaimantMinor = claimant_minor;
+    ClaimantName = claimant_name;
+    ClaimantNameEntry = claimant_name_entry;
+    ClaimantPhone = claimant_phone;
+    ClaimantPostalCode = claimant_postal_code;
+    Reference = reference;
+    ClaimantSsn = claimant_ssn;
+    ClaimantState = claimant_state;
+    ClaimantWorkPhone = claimant_work_phone;
+    ClaimantSReferenceNumber = claimant_s_reference_number;
+    ClaimedAmountUsd = claimed_amount_usd;
+    ClaimingParty = claiming_party;
+    ClientReportLag = client_report_lag;
+    CloseType = close_type;
+    Commodity = commodity;
+    CompensationAct = compensation_act;
+    CompensationRate = compensation_rate;
+    CompensationTotal = compensation_total;
+    ConcurrentClaim = concurrent_claim;
+    ConditionOfClassImposed = condition_of_class_imposed;
+    ContainerNumber = container_number;
+    XContainerNumber = x_container_number;
+    ContainerOwner = container_owner;
+    ContainerPosition = container_position;
+    ContainerSize = container_size;
+    ContainerType = container_type;
+    ContainersDamagedDestroyed = containers_damaged_destroyed;
+    ContainersLostOverboard = containers_lost_overboard;
+    ContingentLiability = contingent_liability;
+    ControllingCountry = controlling_country;
+    ControllingEntity = controlling_entity;
+    ControllingRegion = controlling_region;
+    Controverted = controverted;
+    CountyFiled = county_filed;
+    Court = court;
+    CoverageMajor = coverage_major;
+    CoverageMajorDescription = coverage_major_description;
+    CoverageMinor = coverage_minor;
+    Createdb = createdb;
+    CreatedDateSrcC = created_date_src_c;
+    CrewNationality = crew_nationality;
+    Nationality = nationality;
+    CrewRank = crew_rank;
+    CrossReference = cross_reference;
+    CurrencyGrmUsd = currency_grm_usd;
+    Currency = currency;
+    CurrencyLookup = currency_lookup;
+    Customer = customer;
+    DaAppointed = da_appointed;
+    DaAppointedDate = da_appointed_date;
+    DaEmail = da_email;
+    DaFirmName = da_firm_name;
+    DaHourlyRate = da_hourly_rate;
+    DaName = da_name;
+    DaPhone = da_phone;
+    Damage = damage;
+    DamageCausedBy3rdParty = damage_caused_by_3rd_party;
+    DamageEstimate = damage_estimate;
+    DateClaimantDied = date_claimant_died;
+    DateClosed = date_closed;
+    DateDataLoadInsert = date_data_load_insert;
+    DateDataLoadUpdate = date_data_load_update;
+    DateHired = date_hired;
+    DateIndemnityReceived = date_indemnity_received;
+    DateLastWorked = date_last_worked;
+    DateLossOfTime = date_loss_of_time;
+    DtOfClaimReportToInsurer = dt_of_claim_report_to_insurer;
+    DtOfClaimReportToMskdamco = dt_of_claim_report_to_mskdamco;
+    DateOfLastActivity = date_of_last_activity;
+    DateOfSurvey = date_of_survey;
+    DateOfTimeBar3rdParty = date_of_time_bar_3rd_party;
+    DateOfTimeBarClaimant = date_of_time_bar_claimant;
+    DateOpened = date_opened;
+    DateReceived = date_received;
+    DateReopened = date_reopened;
+    ReportedToInsurer = reported_to_insurer;
+    DateReportedToTpa = date_reported_to_tpa;
+    DateReturnedToWork = date_returned_to_work;
+    DtRiskMgmtReviewComplete = dt_risk_mgmt_review_complete;
+    SettlementDate = settlement_date;
+    DateSubmitted = date_submitted;
+    DateSubmittedToInsurer = date_submitted_to_insurer;
+    DateSubrogationSubmitted = date_subrogation_submitted;
+    DateSuitFiled = date_suit_filed;
+    DayOfWeek = day_of_week;
+    DayOfWeekSrc = day_of_week_src;
+    DaysOffWorkTotal = days_off_work_total;
+    DaysToConversion = days_to_conversion;
+    DaysToDecision = days_to_decision;
+    DaysToReply = days_to_reply;
+    DcliEmployee = dcli_employee;
+    DecisionMade = decision_made;
+    Deductible = deductible;
+    DeductibleFromPolicy = deductible_from_policy;
+    DeductibleTotal = deductible_total;
+    DeferredRepairs = deferred_repairs;
+    DemandAmount = demand_amount;
+    Department = department;
+    DescribeMedicalTreatment = describe_medical_treatment;
+    Description = description;
+    DescriptionOfEvent = description_of_event;
+    Diagnosis = diagnosis;
+    DateOfFirstDisability = date_of_first_disability;
+    LocationGrm = location_grm;
+    DoingUsualWork = doing_usual_work;
+    DriverAddress = driver_address;
+    DriverBirthDate = driver_birth_date;
+    DriverCity = driver_city;
+    DriverName = driver_name;
+    DriverPhone = driver_phone;
+    DriverPostalCode = driver_postal_code;
+    DriverSs = driver_ss;
+    DriverState = driver_state;
+    DriversAge = drivers_age;
+    OriginCountry = origin_country;
+    SettlingAbvLglliabilityAmt = settling_abv_lglliability_amt;
+    EmployeeJobTitle = employee_job_title;
+    EmployerPremises = employer_premises;
+    EquipmentId = equipment_id;
+    EquipmentOperator = equipment_operator;
+    EquipmentType = equipment_type;
+    EquipmentInfrastructureType = equipment_infrastructure_type;
+    EstimateTotalFormula = estimate_total_formula;
+    EstimateTotal = estimate_total;
+    EventType = event_type;
+    ExactLocation = exact_location;
+    ExptForTtClubToConfirm = expt_for_tt_club_to_confirm;
+    ExpectedSettlementAmountUsd = expected_settlement_amount_usd;
+    ExpenseIncurredCurr2 = expense_incurred_curr2;
+    ExpenseIncurredCurr1 = expense_incurred_curr1;
+    ExpenseOutstandingCurr2 = expense_outstanding_curr2;
+    ExpenseOutstandingCurr1 = expense_outstanding_curr1;
+    ExpensePaidCurr2 = expense_paid_curr2;
+    ExpensePaidCurr1 = expense_paid_curr1;
+    ExpertInvolved = expert_involved;
+    ExpirationDate = expiration_date;
+    FCode = f_code;
+    Fatality = fatality;
+    FcrNumber = fcr_number;
+    FederalCourt = federal_court;
+    FeesOutstandingTotal = fees_outstanding_total;
+    FeesPaidTotal = fees_paid_total;
+    FileLocation = file_location;
+    Port = port;
+    FinalSettlementTargetDate = final_settlement_target_date;
+    FitForDutyDate = fit_for_duty_date;
+    FitnessForDuty = fitness_for_duty;
+    Flag = flag;
+    FleetGroup = fleet_group;
+    FormerAdjusterClaim = former_adjuster_claim;
+    Gap = gap;
+    GensetNumber = genset_number;
+    GlbclmOwner = glbclm_owner;
+    GrmClaimsHandler = grm_claims_handler;
+    GrossIncurredCurr2 = gross_incurred_curr2;
+    GrossIncurredCurr1 = gross_incurred_curr1;
+    GrossOutstandingCurr2 = gross_outstanding_curr2;
+    GrossOutstandingCurr1 = gross_outstanding_curr1;
+    GrossPaidCurr2 = gross_paid_curr2;
+    GrossPaidCurr1 = gross_paid_curr1;
+    GrossRegisteredTonnage = gross_registered_tonnage;
+    HandlerBu = handler_bu;
+    HandlerSrcDel = handler_src_del;
+    HandlingCountry = handling_country;
+    HandlingEntity = handling_entity;
+    HandlingRegion = handling_region;
+    HealthcareFacilityAddrline1 = healthcare_facility_addrline_1;
+    HealthcareFacilityAddrline2 = healthcare_facility_addrline_2;
+    HealthcareFacilityCity = healthcare_facility_city;
+    HealthcareFacilityName = healthcare_facility_name;
+    HealthcareFacilityPostalcode = healthcare_facility_postalcode;
+    HealthcareFacilityState = healthcare_facility_state;
+    HierarchyNodeAp = hierarchy_node_ap;
+    HighwayDirection = highway_direction;
+    HospitalizedOvernight = hospitalized_overnight;
+    HsCode = hs_code;
+    HsseLearningPacks = hsse_learning_packs;
+    ImoNumber = imo_number;
+    InLitigation = in_litigation;
+    IncidentMonth = incident_month;
+    IncidentQuarter = incident_quarter;
+    BuClaim = bu_claim;
+    IncidentToClaimDate = incident_to_claim_date;
+    IncidentYear = incident_year;
+    IndemnityIncurredCurr2 = indemnity_incurred_curr2;
+    IndemnityIncurredCurr1 = indemnity_incurred_curr1;
+    IndemnityOutstandingCurr2 = indemnity_outstanding_curr2;
+    IndemnityOutstandingCurr1 = indemnity_outstanding_curr1;
+    IndemnityPaidCurr2 = indemnity_paid_curr2;
+    IndemnityPaidCurr1 = indemnity_paid_curr1;
+    InfrastructureDesc = infrastructure_desc;
+    InitialEstimate = initial_estimate;
+    Injured = injured;
+    InjuryCauseDeath = injury_cause_death;
+    InjuryType = injury_type;
+    TpaCarrier = tpa_carrier;
+    InsuranceSurvey = insurance_survey;
+    InsuranceSurveyDt = insurance_survey_dt;
+    InsuredName = insured_name;
+    Insurer = insurer;
+    InsurerClaim = insurer_claim;
+    InsurerProvisionUsdDamco = insurer_provision_usd_damco;
+    InsurerReferenceNumber = insurer_reference_number;
+    InvoiceNumberSap = invoice_number_sap;
+    IpsCenterProvisionCurrency = ips_center_provision_currency;
+    IpsCenterProvisionUsdDamco = ips_center_provision_usd_damco;
+    IpsCenterProvisionUsd = ips_center_provision_usd;
+    LastCloseDate = last_close_date;
+    LastSubmitDate = last_submit_date;
+    LegalLiabilityAmountUsd = legal_liability_amount_usd;
+    LegalStatusPicklist = legal_status_picklist;
+    LightConditions = light_conditions;
+    LimitationFund = limitation_fund;
+    LimitationFundCurrency = limitation_fund_currency;
+    Litigation = litigation;
+    LitigationStatusGrm = litigation_status_grm;
+    LegalStatus = legal_status;
+    LossJuristiction = loss_juristiction;
+    LocalProvisionDamco = local_provision_damco;
+    LocalProvisionCurrency = local_provision_currency;
+    HierarchyNode = hierarchy_node;
+    ClaimLocation = claim_location;
+    LocationLookup = location_lookup;
+    LocationName = location_name;
+    LocationSubBusinessUnit = location_sub_business_unit;
+    LongTerm = long_term;
+    AccidentAddressLine2 = accident_address_line2;
+    AccidentAddressLine1 = accident_address_line1;
+    AccidentCity = accident_city;
+    LossCountry = loss_country;
+    AccidentCountry = accident_country;
+    DateOfLoss = date_of_loss;
+    AccidentDescription = accident_description;
+    LossJurisdiction = loss_jurisdiction;
+    AccidentPostalCode = accident_postal_code;
+    AccidentState = accident_state;
+    LostDays = lost_days;
+    LostTimeIndicator = lost_time_indicator;
+    LostWagesEarningCapacity = lost_wages_earning_capacity;
+    LouSecurityAmount = lou_security_amount;
+    LouSecurityCurrency = lou_security_currency;
+    MaerskCompany = maersk_company;
+    MaerskDamcoBlNumber = maersk_damco_bl_number;
+    MainActivity = main_activity;
+    MainCasualty = main_casualty;
+    MainCause = main_cause;
+    MainEvent = main_event;
+    StarsDeductible = stars_deductible;
+    MediationDate = mediation_date;
+    MedicalBiIncurred = medical_bi_incurred;
+    MedicalBiPaid = medical_bi_paid;
+    MedicalIncurredCurr2 = medical_incurred_curr2;
+    MedicalIncurredCurr1 = medical_incurred_curr1;
+    MedicalOutstandingCurr2 = medical_outstanding_curr2;
+    MedicalOutstandingCurr1 = medical_outstanding_curr1;
+    MedicalPaidCurr2 = medical_paid_curr2;
+    MedicalPaidCurr1 = medical_paid_curr1;
+    MedicalTreatmentOnboard = medical_treatment_onboard;
+    MedicareLien = medicare_lien;
+    MedicareReportable = medicare_reportable;
+    MescEmployee = mesc_employee;
+    MiasShare = mias_share;
+    MiasShareManual = mias_share_manual;
+    VoidDate = void_date;
+    ModeOfTransport = mode_of_transport;
+    NameOfWatercraft = name_of_watercraft;
+    NameTitleReportedTo = name_title_reported_to;
+    Nature = nature;
+    NearestLandmark = nearest_landmark;
+    NetIncurredCurr2 = net_incurred_curr2;
+    NetIncurredCurr1 = net_incurred_curr1;
+    NetOutstandingCurr2 = net_outstanding_curr2;
+    NetOutstandingCurr1 = net_outstanding_curr1;
+    NetPaidCurr2 = net_paid_curr2;
+    NetPaidCurr1 = net_paid_curr1;
+    NetRetention = net_retention;
+    NetRtntEur = net_rtnt_eur;
+    NetRtntUsd = net_rtnt_usd;
+    NewDisabilityPeriod = new_disability_period;
+    NotifiedDate = notified_date;
+    Occupation = occupation;
+    Occurrence = occurrence;
+    OccurrenceNumber = occurrence_number;
+    OccurrenceType = occurrence_type;
+    Ocl = ocl;
+    OcuClaim = ocu_claim;
+    OffBsCentreCurrency = off_bs_centre_currency;
+    OffBsCountriesCurrency = off_bs_countries_currency;
+    OffsiteMedicalTreatmentDel = offsite_medical_treatment_del;
+    OldDamcoReferenceNumber = old_damco_reference_number;
+    OshaRecordable = osha_recordable;
+    OtherCarriers = other_carriers;
+    OtherVehicles = other_vehicles;
+    Owcp = owcp;
+    PIAad = p_i_aad;
+    PIClubNew = p_i_club_new;
+    PIClubNames = p_i_club_names;
+    PaAppointed = pa_appointed;
+    PaAppointedDate = pa_appointed_date;
+    PaEmail = pa_email;
+    PaFirmName = pa_firm_name;
+    PaName = pa_name;
+    PaPhone = pa_phone;
+    SettledLegalCost = settled_legal_cost;
+    PaidSettledLegalCostsUsd = paid_settled_legal_costs_usd;
+    PaidSettledAmountUsd = paid_settled_amount_usd;
+    PartGeneralDelDel = part_general_del_del;
+    PermanentRepairs = permanent_repairs;
+    PersonName = person_name;
+    PhysicalFile = physical_file;
+    PhysicianName = physician_name;
+    PlannedRepairDate = planned_repair_date;
+    PoliceDeptName = police_dept_name;
+    PoliceReport = police_report;
+    PolicyEffectiveDate = policy_effective_date;
+    PolicyExpirationDateDel = policy_expiration_date_del;
+    PolicyName = policy_name;
+    PolicyLookup = policy_lookup;
+    PolicyNumberNew = policy_number_new;
+    PolicyNumber = policy_number;
+    PolicySectionLookup = policy_section_lookup;
+    PolicyYearNew = policy_year_new;
+    PolicyYear = policy_year;
+    FinalDestination = final_destination;
+    PortOfDischarge = port_of_discharge;
+    PortOfOrigin = port_of_origin;
+    PortOfLoading = port_of_loading;
+    PortOfReceipt = port_of_receipt;
+    PermanentPortOfRepair = permanent_port_of_repair;
+    TemporaryPortOfRepair = temporary_port_of_repair;
+    PortSInvolved = port_s_involved;
+    Preventable = preventable;
+    PropertyLookup = property_lookup;
+    Recommendation = recommendation;
+    RecommendationComments = recommendation_comments;
+    RecordTypeCustom = record_type_custom;
+    RecoveryFrom3rdPartyCurr2 = recovery_from_3rd_party_curr2;
+    RecoveryFrom3rdPartyCurr1 = recovery_from_3rd_party_curr1;
+    RecoveryReceived = recovery_received;
+    RecoveryFromInsuranceCurr2 = recovery_from_insurance_curr2;
+    RecoveryFromInsuranceCurr1 = recovery_from_insurance_curr1;
+    RecoveryOwner = recovery_owner;
+    RecoveryPursued = recovery_pursued;
+    RecoveryStatus = recovery_status;
+    RedFlag = red_flag;
+    RegionSrc = region_src;
+    PermanentRepairCompleteDate = permanent_repair_complete_date;
+    TemporaryRepairCompleteDate = temporary_repair_complete_date;
+    PermanentRepairDescription = permanent_repair_description;
+    TemporaryRepairDescription = temporary_repair_description;
+    PermanentRepairStartDate = permanent_repair_start_date;
+    TemporaryRepairStartDate = temporary_repair_start_date;
+    RepairsCompletedInPort = repairs_completed_in_port;
+    VsaPartner = vsa_partner;
+    ReplyDate = reply_date;
+    DateReportedToClient = date_reported_to_client;
+    ReportedToBroker = reported_to_broker;
+    ReportingDepartment = reporting_department;
+    ResponseDate = response_date;
+    X3rdPartyName = x3rd_party_name;
+    Responsible3rdPartyCode = responsible_3rd_party_code;
+    ResponsiblePartyCode = responsible_party_code;
+    RestrictedDays = restricted_days;
+    RetainedEarningCapacity = retained_earning_capacity;
+    RootCause = root_cause;
+    ZzzCauseCode = zzz_cause_code;
+    Salvage = salvage;
+    Savings = savings;
+    Seal = seal;
+    ServedDate = served_date;
+    SettlementAmount = settlement_amount;
+    SettlementStatus = settlement_status;
+    Severity = severity;
+    ShippersInstructions = shippers_instructions;
+    Shift = shift;
+    PolicyExpirationDate = policy_expiration_date;
+    SurveyDate = survey_date;
+    PropertyType = property_type;
+    SourceGeneralDel = source_general_del;
+    Specification = specification;
+    StateFiled = state_filed;
+    StateFundRecovIndicatorDel = state_fund_recov_indicator_del;
+    StateOfEmploymentDel = state_of_employment_del;
+    StateOfJurisdiction = state_of_jurisdiction;
+    Status = status;
+    StatusClosedCount = status_closed_count;
+    StatusDetail = status_detail;
+    StatusOpenCount = status_open_count;
+    SubType = sub_type;
+    SubmitToTpa = submit_to_tpa;
+    SubmittedForReimb = submitted_for_reimb;
+    SubmittedTo3rdParty = submitted_to_3rd_party;
+    SubrogationGrm = subrogation_grm;
+    Subrogation = subrogation;
+    SubrogationAmountReceived = subrogation_amount_received;
+    SubrogationAmountSubmitted = subrogation_amount_submitted;
+    SubrogationIndicatorDel = subrogation_indicator_del;
+    SubrogationSubmittedTo = subrogation_submitted_to;
+    SuitFiledDate = suit_filed_date;
+    Superintendent = superintendent;
+    SupervisorName = supervisor_name;
+    SurveyReportYN = survey_report_y_n;
+    SurveyRequested = survey_requested;
+    SurveyedAt = surveyed_at;
+    SurveyorName = surveyor_name;
+    TakeoverIndicator = takeover_indicator;
+    TemporaryRepairs = temporary_repairs;
+    TerminalsLoad = terminals_load;
+    ThirdPartyInsuranceCoDel = third_party_insurance_co_del;
+    ThirdPartyPolicyNumberDel = third_party_policy_number_del;
+    TimbarDateSubrogation = timbar_date_subrogation;
+    TimeBar = time_bar;
+    AccidentTime = accident_time;
+    TimebarDateCDel = timebar_date_c_del;
+    TimebarDateApmmVsInsurance = timebar_date_apmm_vs_insurance;
+    TimebarDateClaimantVsApmm = timebar_date_claimant_vs_apmm;
+    TimebarDateSubrogation = timebar_date_subrogation;
+    TotalDeductible = total_deductible;
+    TotalDeductibleCurr2 = total_deductible_curr2;
+    TotalDeductibleCurr1 = total_deductible_curr1;
+    TtlNoDamageBoxesPkgWeig = ttl_no_damage_boxes_pkg_weig;
+    TotalMiasShare = total_mias_share;
+    TotalRepairCostDel = total_repair_cost_del;
+    TotalRepairCostRaw = total_repair_cost_raw;
+    TotalRepairCostTotal = total_repair_cost_total;
+    TpaCarrierAccountCode = tpa_carrier_account_code;
+    TpaCarrierLookupDel = tpa_carrier_lookup_del;
+    TpaDate = tpa_date;
+    TpaPaid = tpa_paid;
+    TpaReportLag = tpa_report_lag;
+    TpaReserve = tpa_reserve;
+    TradeUnion = trade_union;
+    TreatedInEmergencyRoomDel = treated_in_emergency_room_del;
+    TrialDate = trial_date;
+    TruckingCompanyAddress = trucking_company_address;
+    TruckingCompanyCity = trucking_company_city;
+    TruckingCompanyContact = trucking_company_contact;
+    TruckingCompanyName = trucking_company_name;
+    TruckingCompanyPhone = trucking_company_phone;
+    TruckingCompanyZip = trucking_company_zip;
+    TruckingCompanyState = trucking_company_state;
+    TypeOfPropertyDamaged = type_of_property_damaged;
+    TypeOfWatercraftDamaged = type_of_watercraft_damaged;
+    UnderwritersReserveTotal = underwriters_reserve_total;
+    UninsuredUnderinsured = uninsured_underinsured;
+    VehicleInspectionDate = vehicle_inspection_date;
+    VehicleLeaseDateDel = vehicle_lease_date_del;
+    VehicleLeased = vehicle_leased;
+    VehicleMake = vehicle_make;
+    ClaimantVehicleMake = claimant_vehicle_make;
+    VehicleModel = vehicle_model;
+    ClaimantVehicleModel = claimant_vehicle_model;
+    VehicleOwner = vehicle_owner;
+    VehicleOwnerName = vehicle_owner_name;
+    VehicleYear = vehicle_year;
+    ClaimantVehicleYear = claimant_vehicle_year;
+    Probability = probability;
+    Vessel = vessel;
+    VesselName = vessel_name;
+    VesselOperator = vessel_operator;
+    VesselOwnerName = vessel_owner_name;
+    VesselAircraft = vessel_aircraft;
+    Voyage = voyage;
+    VoyageNumber = voyage_number;
+    Weather = weather;
+    WeeklyWages = weekly_wages;
+    WhoOwnsProperty = who_owns_property;
+    WorkRelatedDel = work_related_del;
+    WorkRestrictionsDel = work_restrictions_del;
+    YearOfLoss = year_of_loss;
+    YearlyWagesDel = yearly_wages_del;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Location_UUID = location_uuid;
+  }
+}
+
+define behavior for ZR_TGRC_CLAIM_TRN alias CLAIM_TRN
+persistent table ZTGRC_CLAIM_TRN
+draft table ZTGRC_CLAM_TR_D
+etag master Lastchangedat
+lock dependent by _Claim
+authorization dependent by _Claim
+
+{
+association _Claim { with draft; }
+
+field ( mandatory ) ClaimTrnRecType;
+
+  field ( readonly )
+   ClaimTrnUuid,
+   ClaimUuid,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+  field ( numbering : managed )
+   ClaimTrnUuid;
+
+
+  update( precheck );
+  delete;
+
+
+  mapping for ZTGRC_CLAIM_TRN
+  {
+
+    ClaimUuid = claim_uuid;
+    ClaimTrnUuid = claim_trn_uuid;
+    ClaimTrnExternalId = claim_trn_external_id;
+    ClaimTrnRecType = claim_trn_rec_type;
+    Adjustment = adjustment;
+    Amount = amount;
+    BankAccountNumber = bank_account_number;
+    Category = category;
+    CheckNumber = check_number;
+    CheckStatus = check_status;
+    CoverageMajor = coverage_major;
+    CurrencyCode = currency_code;
+    CurrencyLookup = currency_lookup;
+    DateCheckCleared = date_check_cleared;
+    DateCheckIssued = date_check_issued;
+    DateCheckStatus = date_check_status;
+    DateOfInvoice = date_of_invoice;
+    DatePayServiceBegin = date_pay_service_begin;
+    DatePayServiceEnd = date_pay_service_end;
+    DisabilityCode = disability_code;
+    ExpensePaid = expense_paid;
+    ExpensePaidDelta = expense_paid_delta;
+    ExpenseRecovery = expense_recovery;
+    ExpenseRecoveryDelta = expense_recovery_delta;
+    ExpenseReserveDelta = expense_reserve_delta;
+    ExpenseReserve = expense_reserve;
+    IndemnityPdPaid = indemnity_pd_paid;
+    IndemnityPdPaidDelta = indemnity_pd_paid_delta;
+    IndemnityPdRecovery = indemnity_pd_recovery;
+    IndemnityPdRecoveryDelta = indemnity_pd_recovery_delta;
+    IndemnityPdReserve = indemnity_pd_reserve;
+    IndemnityPdReserveDelta = indemnity_pd_reserve_delta;
+    InvoiceAmount = invoice_amount;
+    InvoiceNumber = invoice_number;
+    MedicalBiPaid = medical_bi_paid;
+    MedicalBiPaidDelta = medical_bi_paid_delta;
+    MedicalBiRecovery = medical_bi_recovery;
+    MedicalBiRecoveryDelta = medical_bi_recovery_delta;
+    MedicalBiReserveDelta = medical_bi_reserve_delta;
+    MedicalBiReserve = medical_bi_reserve;
+    PayComment = pay_comment;
+    PayeeLookup = payee_lookup;
+    PayeeAddressLine2 = payee_address_line_2;
+    PayeeAddressLine1 = payee_address_line1;
+    PayeeCity = payee_city;
+    PayeeContact = payee_contact;
+    PayeeCountry = payee_country;
+    Payee = payee;
+    PayeePostalCode = payee_postal_code;
+    PayeeState = payee_state;
+    PayeeType = payee_type;
+    PaymentStatus = payment_status;
+    QuickLoad = quick_load;
+    RecoveryReceivedOther2 = recovery_received_other2;
+    RecoveryReceivedOther2Delta = recovery_received_other2_delta;
+    RecoveryReceivedOther = recovery_received_other;
+    RecoveryReceivedOtherDelta = recovery_received_other_delta;
+    TaxId = tax_id;
+    TotalReserve = total_reserve;
+    Trankey = trankey;
+    TransactionCode = transaction_code;
+    TransactionDate = transaction_date;
+    TransactionSequence = transaction_sequence;
+    TransactionStatus = transaction_status;
+    Type = type;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+}
